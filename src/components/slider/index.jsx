@@ -15,7 +15,7 @@ import {
   Title,
   Desc,
   Button
-} from "./slider.styles";
+} from "./Slider.styles";
 
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);

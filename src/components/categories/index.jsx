@@ -1,6 +1,6 @@
 import React from "react";
-import CategoryItem from "../categoryItem/categoryItem.component";
-import { Container } from "./categories.styles";
+import CategoryItem from "../CategoryItem";
+import { Container } from "./Categories.styles";
 
 import { categories } from "../../data";
 

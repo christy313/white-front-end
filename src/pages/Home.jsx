@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar from "../components/navbar/navbar.component";
-import Notice from "../components/notice/notice.component";
-import Slider from "../components/slider/slider.component";
-import Categories from "../components/categories/categories.component";
+import Navbar from "../components/Navbar/index";
+import Notice from "../components/Notice/index";
+import Slider from "../components/Slider/index";
+import Categories from "../components/Categories/index";
 
 const Home = () => {
   return (

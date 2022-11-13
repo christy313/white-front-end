@@ -12,7 +12,7 @@ import {
   Input,
   Right,
   MenuItem
-} from "./navbar.styles";
+} from "./Navbar.styles";
 
 const Navbar = () => {
   return (
