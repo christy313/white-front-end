@@ -1,8 +1,8 @@
 import React from "react";
-import ProductsList from "./pages/ProductsList";
+import SingleProduct from "./pages/SingleProduct";
 
 const App = () => {
-  return <ProductsList />;
+  return <SingleProduct />;
 };
 
 export default App;
