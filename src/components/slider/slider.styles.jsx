@@ -42,7 +42,7 @@ export const Slide = styled.div`
   width: 100vw;
   height: 100vh;
 
-  background-color: ${props => props.bg};
+  background-color: #${props => props.bg};
 `;
 
 export const ImgContainer = styled.div`
