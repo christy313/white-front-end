@@ -22,10 +22,10 @@ const Left = styled.div`
   align-items: center;
 `;
 
-const Language = styled.span`
-  font-size: 14px;
-  cursor: pointer;
-`;
+// const Language = styled.span`
+//   font-size: 14px;
+//   cursor: pointer;
+// `;
 
 const SearchContainer = styled.div`
   border: 1px solid lightgray;
