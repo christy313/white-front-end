@@ -22,9 +22,8 @@ const Navbar = () => {
           <Logo>gap</Logo>
         </Left>
         <Center>
-          {/* <Language>En</Language> */}
           <SearchContainer>
-            <Input />
+            <Input placeholder="Search" />
             <SearchIcon
               style={{ color: "gray", fontSize: "16", textAlign: "flex-end" }}
             />
