@@ -19,7 +19,7 @@ export const Info = styled.div`
 export const Container = styled.div`
   flex: 1;
   margin: 5px;
-  max-width: 280px;
+  min-width: 280px;
   height: 350px;
   display: flex;
   justify-content: center;

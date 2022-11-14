@@ -1,9 +1,11 @@
 import styled from "styled-components";
+import { mobile } from "../../responsive";
 
 export const Container = styled.div``;
 
 export const Wrapper = styled.div`
   padding: 20px;
+  ${mobile({ padding: "10px" })}
 `;
 
 export const Title = styled.h1`
@@ -19,6 +21,7 @@ export const Top = styled.div`
 
 export const TopButton = styled.button`
   padding: 10px;
+  margin: 10px;
   font-weight: 600;
   cursor: pointer;
   border: ${props => props.type === "filled" && "none"};
@@ -27,7 +30,9 @@ export const TopButton = styled.button`
   color: ${props => props.type === "filled" && "white"};
 `;
 
-export const TopTexts = styled.div``;
+export const TopTexts = styled.div`
+  ${mobile({ display: "none" })}
+`;
 export const TopText = styled.span`
   text-decoration: underline;
   cursor: pointer;
@@ -37,11 +42,13 @@ export const TopText = styled.span`
 export const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({ flexDirection: "column" })}
 `;
 
 export const Info = styled.div`
   flex: 3;
 `;
+
 export const Summary = styled.div`
   flex: 1;
   border: 0.5px solid lightgray;
@@ -53,6 +60,7 @@ export const Summary = styled.div`
 export const Product = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({ flexDirection: "column" })}
 `;
 
 export const ProductDetail = styled.div`
@@ -71,6 +79,7 @@ export const PriceDetail = styled.div`
   justify-content: center;
   flex-direction: column;
 `;
+
 export const Details = styled.div`
   padding: 20px;
   display: flex;
@@ -79,27 +88,32 @@ export const Details = styled.div`
 `;
 
 export const ProductName = styled.div``;
+
 export const ProductId = styled.div``;
+
 export const ProductColor = styled.div`
   width: 20px;
   height: 20px;
   border-radius: 50%;
-
   background-color: ${props => props.color};
 `;
+
 export const ProductSize = styled.div``;
 
 export const ProductAmountContainer = styled.div`
   display: flex;
   align-items: center;
 `;
+
 export const ProductAmount = styled.div`
   font-size: 24px;
   margin: 5px;
+  ${mobile({ margin: "5px 15px" })}
 `;
 export const ProductPrice = styled.div`
   font-size: 30px;
   font-weight: 200;
+  ${mobile({ margin: "20px" })}
 `;
 
 export const Hr = styled.hr`
@@ -109,6 +123,7 @@ export const Hr = styled.hr`
 export const SummaryTitle = styled.h1`
   font-weight: 200;
 `;
+
 export const SummaryItem = styled.div`
   margin: 30px 0px;
   display: flex;
@@ -116,8 +131,11 @@ export const SummaryItem = styled.div`
   font-weight: ${props => props.type === "total" && "500"};
   font-size: ${props => props.type === "total" && "24px"};
 `;
+
 export const SummaryItemText = styled.span``;
+
 export const SummaryItemPrice = styled.span``;
+
 export const Button = styled.button`
   width: 100%;
   padding: 10px;
