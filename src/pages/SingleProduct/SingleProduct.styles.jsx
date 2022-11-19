@@ -25,6 +25,7 @@ export const InfoContainer = styled.div`
   padding: 0px 50px;
   ${mobile({ padding: "10px" })}
 `;
+
 export const Title = styled.h1`
   font-weight: 200;
 `;
@@ -32,6 +33,7 @@ export const Title = styled.h1`
 export const Desc = styled.p`
   margin: 20px 0px;
 `;
+
 export const Price = styled.span`
   font-weight: 100;
   font-size: 40px;
@@ -54,14 +56,16 @@ export const FilterTitle = styled.span`
   font-size: 20px;
   font-weight: 200;
 `;
+
 export const FilterColor = styled.div`
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: ${props => props.color};
+  background-color: ${(props) => props.color};
   margin: 0px 5px;
   cursor: pointer;
 `;
+
 export const FilterSize = styled.select`
   margin-left: 10px;
   padding: 5px;

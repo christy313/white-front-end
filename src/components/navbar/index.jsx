@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import Badge from "@mui/material/Badge";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
@@ -11,7 +12,7 @@ import {
   SearchContainer,
   Input,
   Right,
-  MenuItem
+  MenuItem,
 } from "./Navbar.styles";
 
 const Navbar = () => {
@@ -19,7 +20,9 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Left>
-          <Logo>gap</Logo>
+          <Link to="/">
+            <Logo>gap</Logo>
+          </Link>
         </Left>
         <Center>
           <SearchContainer>
