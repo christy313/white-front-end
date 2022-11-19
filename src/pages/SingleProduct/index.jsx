@@ -97,9 +97,15 @@ const SingleProduct = () => {
 
           <AddContainer>
             <AmountContainer>
-              <RemoveIcon onClick={() => handleQuantity("dec")} />
+              <RemoveIcon
+                onClick={() => handleQuantity("dec")}
+                style={{ cursor: "pointer" }}
+              />
               <Amount>{quantity}</Amount>
-              <AddIcon onClick={() => handleQuantity("inc")} />
+              <AddIcon
+                onClick={() => handleQuantity("inc")}
+                style={{ cursor: "pointer" }}
+              />
             </AmountContainer>
             <Button onClick={handleClick}>Add to Cart</Button>
           </AddContainer>
