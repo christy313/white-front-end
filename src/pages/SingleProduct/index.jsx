@@ -1,5 +1,5 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Notice from "../../components/Notice";
 import Newsletter from "../../components/Newsletter";
@@ -26,51 +26,74 @@ import {
   AddContainer,
   AmountContainer,
   Amount,
-  Button
+  Button,
 } from "./SingleProduct.styles";
 
 const SingleProduct = () => {
+  const location = useLocation();
+  const id = location.pathname.split("/")[2];
+  const [product, setProduct] = useState({});
+  const [quantity, setQuantity] = useState(1);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const res = await fetch(
+          `http://localhost:8080/api/products/find/${id}`
+        );
+        const productData = await res.json();
+
+        setProduct(productData);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchProducts();
+  }, [id]);
+
+  const handleQuantity = (type) => {
+    if (type === "dec") {
+      setQuantity(quantity - 1);
+    } else {
+      setQuantity(quantity + 1);
+    }
+  };
+
   return (
     <Container>
       <Navbar />
       <Notice />
       <Wrapper>
         <ImgContainer>
-          <Image src="https://images.ctfassets.net/5gvckmvm9289/3BlDoZxSSjqAvv1jBJP7TH/65f9a95484117730ace42abf64e89572/Noissue-x-Creatsy-Tote-Bag-Mockup-Bundle-_4_-2.png" />
+          <Image src={product.img} />
         </ImgContainer>
 
         <InfoContainer>
-          <Title>I am title</Title>
-          <Desc>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias
-            enim, facere ut eius accusantium maxime sint. Ut quisquam tenetur
-            accusamus.
-          </Desc>
-          <Price>$200</Price>
+          <Title>{product.title}</Title>
+          <Desc>{product.desc}</Desc>
+          <Price>$ {product.price}</Price>
           <FilterContainer>
             <Filter>
-              <FilterTitle>color</FilterTitle>
-              <FilterColor color="black" />
-              <FilterColor color="darkblue" />
-              <FilterColor color="gray" />
+              <FilterTitle>Color</FilterTitle>
+              {product.color?.map((c) => (
+                <FilterColor color={c} key={c} />
+              ))}
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
               <FilterSize>
-                <FilterSizeOption>XS</FilterSizeOption>
-                <FilterSizeOption>S</FilterSizeOption>
-                <FilterSizeOption>M</FilterSizeOption>
-                <FilterSizeOption>L</FilterSizeOption>
-                <FilterSizeOption>XL</FilterSizeOption>
+                {product.size?.map((s) => (
+                  <FilterSizeOption key={s}>{s}</FilterSizeOption>
+                ))}
               </FilterSize>
             </Filter>
           </FilterContainer>
 
           <AddContainer>
             <AmountContainer>
-              <RemoveIcon />
-              <Amount>1</Amount>
-              <AddIcon />
+              <RemoveIcon onClick={handleQuantity("dec")} />
+              <Amount>{quantity}</Amount>
+              <AddIcon onClick={handleQuantity("inc")} />
             </AmountContainer>
             <Button>Add to Cart</Button>
           </AddContainer>

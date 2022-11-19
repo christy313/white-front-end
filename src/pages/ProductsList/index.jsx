@@ -29,11 +29,12 @@ const ProductsList = () => {
       [e.target.name]: value,
     });
   };
+
   return (
     <Container>
       <Notice />
       <Navbar />
-      <Title>Dresses</Title>
+      <Title>{category}</Title>
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products:</FilterText>
@@ -55,6 +56,7 @@ const ProductsList = () => {
             <Option>XL</Option>
           </Select>
         </Filter>
+
         <Filter>
           <FilterText>Sort Products:</FilterText>
           <Select onChange={(e) => setSort(e.target.value)}>

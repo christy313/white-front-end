@@ -1,31 +1,29 @@
 import React, { useState, useEffect } from "react";
-
 import Product from "../Product/index";
-import { popularProducts } from "../../data";
-
 import { Container } from "./Products.styles";
+// import { popularProducts } from "../../data";
 
 const Products = ({ category, filters, sort }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const res = await fetch(
+          category
+            ? `http://localhost:8080/api/products?category=${category}`
+            : `http://localhost:8080/api/products`
+        );
+
+        const productsData = await res.json();
+        setProducts(productsData);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     fetchProducts();
   }, [category]);
-
-  const fetchProducts = async () => {
-    try {
-      const res = await fetch(
-        category
-          ? `http://localhost:8080/api/products?category=${category}`
-          : `http://localhost:8080/api/products`
-      );
-      const productsData = await res.json();
-      setProducts(productsData);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   useEffect(() => {
     category &&
@@ -57,10 +55,10 @@ const Products = ({ category, filters, sort }) => {
   return (
     <Container>
       {category
-        ? filteredProducts.map((item) => <Product item={item} key={item.id} />)
+        ? filteredProducts.map((item) => <Product item={item} key={item._id} />)
         : products
             .slice(0, 8)
-            .map((item) => <Product item={item} key={item.id} />)}
+            .map((item) => <Product item={item} key={item._id} />)}
     </Container>
   );
 };
