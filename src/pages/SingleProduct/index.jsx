@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../../redux/cartRedux";
 import { useLocation } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Notice from "../../components/Notice";
@@ -36,6 +38,7 @@ const SingleProduct = () => {
   const [quantity, setQuantity] = useState(1);
   const [color, setColor] = useState("");
   const [size, setSize] = useState("");
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -62,7 +65,7 @@ const SingleProduct = () => {
   };
 
   const handleClick = () => {
-    //update cart
+    dispatch(addProduct({ ...product, quantity, color, size }));
   };
 
   return (
