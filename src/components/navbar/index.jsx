@@ -1,4 +1,6 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import Badge from "@mui/material/Badge";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
@@ -11,20 +13,22 @@ import {
   SearchContainer,
   Input,
   Right,
-  MenuItem
+  MenuItem,
 } from "./Navbar.styles";
 
 const Navbar = () => {
+  const quantity = useSelector((state) => state.cart.quantity);
   return (
     <Container>
       <Wrapper>
         <Left>
-          <Logo>gap</Logo>
+          <Link to="/">
+            <Logo>gap</Logo>
+          </Link>
         </Left>
         <Center>
-          {/* <Language>En</Language> */}
           <SearchContainer>
-            <Input />
+            <Input placeholder="Search" />
             <SearchIcon
               style={{ color: "gray", fontSize: "16", textAlign: "flex-end" }}
             />
@@ -33,11 +37,13 @@ const Navbar = () => {
         <Right>
           <MenuItem>Register</MenuItem>
           <MenuItem>Sign in</MenuItem>
-          <MenuItem>
-            <Badge badgeContent={4} color="primary">
-              <ShoppingCartOutlinedIcon />
-            </Badge>
-          </MenuItem>
+          <Link to="/cart">
+            <MenuItem>
+              <Badge badgeContent={quantity} color="primary">
+                <ShoppingCartOutlinedIcon />
+              </Badge>
+            </MenuItem>
+          </Link>
         </Right>
       </Wrapper>
     </Container>

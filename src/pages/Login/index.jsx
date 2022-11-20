@@ -5,9 +5,9 @@ import {
   Title,
   Form,
   Input,
-  Agreement,
+  // Agreement,
   Button,
-  Link
+  Link,
 } from "./Login.styles";
 
 const Login = () => {
