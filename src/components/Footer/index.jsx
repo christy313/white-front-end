@@ -29,9 +29,9 @@ const Footer = () => {
       <Left>
         <Logo>gap</Logo>
         <Desc>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad ullam,
-          nostrum et illo laudantium in accusantium odit consequuntur fuga
-          dicta!
+          There are many variations of passages of Lorem Ipsum available, but
+          the majority have suffered alteration in some form, by injected
+          humour, or randomised words which don’t look even slightly believable.{" "}
         </Desc>
         <SocialContainer>
           <SocialIcon color="3B5999">
