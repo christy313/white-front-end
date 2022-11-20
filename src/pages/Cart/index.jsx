@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import StripeCheckout from "react-stripe-checkout";
 import { useSelector } from "react-redux";
+
 import Notice from "../../components/Notice";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
@@ -42,7 +44,38 @@ import {
 const stripeKey = process.env.REACT_APP_STRIPE;
 
 const Cart = () => {
+  const [stripeToken, setStripeToken] = useState(null);
   const cart = useSelector((state) => state.cart);
+  const navigate = useNavigate();
+
+  const onToken = (token) => {
+    setStripeToken(token);
+  };
+  console.log(stripeToken);
+
+  useEffect(() => {
+    const makeRequest = async () => {
+      try {
+        const res = await fetch("http://localhost:8080/api/checkout/payment", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`,
+          },
+          body: JSON.stringify({
+            tokenId: stripeToken.id,
+            amount: cart.total * 100,
+          }),
+        });
+        const data = await res.json();
+        navigate("/success");
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    stripeToken && makeRequest();
+  }, [stripeToken, navigate, cart.total]);
+
   return (
     <Container>
       <Notice />
@@ -55,12 +88,23 @@ const Cart = () => {
             <TopText>Shopping Bag(2)</TopText>
             <TopText>Your Wishlist(0)</TopText>
           </TopTexts>
-          <TopButton type="filled">CHECKOUT NOW</TopButton>
+          <StripeCheckout
+            name="gap"
+            image="https://avatars.githubusercontent.com/u/50518097?v=4"
+            billingAddress
+            shippingAddress
+            description={`Your total is $${cart.total}`}
+            amount={cart.total * 100}
+            token={onToken}
+            stripeKey={stripeKey}
+          >
+            <TopButton type="filled">CHECKOUT NOW</TopButton>
+          </StripeCheckout>
         </Top>
         <Bottom>
           <Info>
             {cart.products.map((product) => (
-              <Product>
+              <Product key={product._id}>
                 <ProductDetail>
                   <Image src={product.img} />
                   <Details>
@@ -111,14 +155,16 @@ const Cart = () => {
 
             <StripeCheckout
               name="gap"
-              // image="https://avatars.githubusercontent.com/u/1486366?v=4"
+              image="https://avatars.githubusercontent.com/u/50518097?v=4"
               billingAddress
               shippingAddress
               description={`Your total is $${cart.total}`}
               amount={cart.total * 100}
-              // token={onToken}
+              token={onToken}
               stripeKey={stripeKey}
-            />
+            >
+              <Button>Checkout Now</Button>
+            </StripeCheckout>
           </Summary>
         </Bottom>
       </Wrapper>
