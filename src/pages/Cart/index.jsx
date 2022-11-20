@@ -68,9 +68,9 @@ const Cart = () => {
           }),
         });
         const data = await res.json();
-        navigate("/success");
+        navigate("/success", { state: data });
       } catch (error) {
-        console.log(error);
+        console.log(error.message);
       }
     };
     stripeToken && makeRequest();
