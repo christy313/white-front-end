@@ -16,6 +16,7 @@ import Success from "../src/pages/Success";
 
 const App = () => {
   const user = useSelector(state => state.user.currentUser);
+
   return (
     <Router>
       <Routes>

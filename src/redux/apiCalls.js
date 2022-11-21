@@ -14,5 +14,6 @@ export const login = async (dispatch, user) => {
     }),
   });
   const data = await res.json();
+  // remove try catch block for not getting error action
   data.username ? dispatch(loginSuccess(data)) : dispatch(loginFailure());
 };
