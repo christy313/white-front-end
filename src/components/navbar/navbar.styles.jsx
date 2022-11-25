@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { mobile } from "../../responsive";
 
@@ -65,4 +66,9 @@ export const MenuItem = styled.div`
   margin-left: 24px;
 
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  cursor: pointer;
 `;

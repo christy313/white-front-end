@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../redux/apiCalls";
 import {
@@ -9,7 +10,7 @@ import {
   Input,
   // Agreement,
   Button,
-  Link,
+  StyledLink,
   Error,
 } from "./Login.styles";
 
@@ -41,9 +42,9 @@ const Login = () => {
           <Button onClick={handleLogin} disabled={isFetching}>
             LOGIN
           </Button>
+          <StyledLink to="/register">Register</StyledLink>
           {error && <Error>Something went wrong</Error>}
-          <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
-          <Link>CREATE A NEW ACCOUNT</Link>
+          {/* <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link> */}
         </Form>
       </Wrapper>
     </Container>

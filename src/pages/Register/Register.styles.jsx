@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import styled from "styled-components";
 import { mobile } from "../../responsive";
 
@@ -16,38 +18,48 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  width: 40%;
+  max-width: 320px;
   padding: 20px;
-  background-color: white;
-  ${mobile({ width: "75%" })}
+  background-color: lightblue;
+  text-align: center;
+
+  ${mobile({ width: "80%" })}
 `;
+
 export const Title = styled.h1`
   font-size: 24px;
   font-weight: 300;
 `;
 
 export const Form = styled.form`
-  display: flex;
-  flex-wrap: wrap;
+  margin-bottom: 20px;
 `;
 
 export const Input = styled.input`
-  flex: 1;
-  min-width: 40%;
+  min-width: 200px;
   margin: 20px 10px 0px 0px;
   padding: 10px;
+  display: inline-block;
+  justify-content: center;
 `;
 
-export const Agreement = styled.span`
-  font-size: 12px;
-  margin: 20px 0px;
-`;
+// export const Agreement = styled.div`
+//   font-size: 12px;
+//   margin: 20px 0px;
+//   text-align: left;
+// `;
 
 export const Button = styled.button`
-  width: 40%;
   border: none;
   padding: 15px 20px;
   background-color: teal;
   color: white;
+  cursor: pointer;
+`;
+
+export const StyledLink = styled(Link)`
+  margin: 5px 10px;
+  font-size: 16px;
+  text-decoration: none;
   cursor: pointer;
 `;
