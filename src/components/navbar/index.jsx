@@ -23,7 +23,6 @@ import {
 const Navbar = () => {
   const quantity = useSelector((state) => state.cart.quantity);
   const user = useSelector((state) => state.user.currentUser);
-  // const user = null;
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -39,15 +38,18 @@ const Navbar = () => {
           <StyledLink to="/">
             <Logo>gap</Logo>
           </StyledLink>
+          <StyledLink>Women</StyledLink>
+          <StyledLink>Men</StyledLink>
+          <StyledLink>Kids</StyledLink>
         </Left>
-        <Center>
+        {/* <Center>
           <SearchContainer>
             <Input placeholder="Search" />
             <SearchIcon
               style={{ color: "gray", fontSize: "16", textAlign: "flex-end" }}
             />
           </SearchContainer>
-        </Center>
+        </Center> */}
         <Right>
           {user ? (
             <StyledLink to="/" onClick={handleLogout}>

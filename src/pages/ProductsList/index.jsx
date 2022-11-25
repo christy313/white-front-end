@@ -32,7 +32,7 @@ const ProductsList = () => {
 
   return (
     <Container>
-      <Notice />
+      {/* <Notice /> */}
       <Navbar />
       <Title>{category}</Title>
       <FilterContainer>
