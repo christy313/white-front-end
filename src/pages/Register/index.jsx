@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-// import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { RegisterUser } from "../../redux/apiCalls";
 
 import {
   Container,
@@ -16,9 +18,13 @@ const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
+    RegisterUser(dispatch, { username, email, password });
+    navigate("/");
   };
 
   return (
@@ -46,7 +52,7 @@ const Register = () => {
           By creating an account, I consent to the processing of my personal
           data in accordance with the <b>PRIVACY POLICY</b>
         </Agreement> */}
-        <Button onSubmit={handleRegister}>Register</Button>
+        <Button onClick={handleRegister}>Register</Button>
         <StyledLink to="/login">Login</StyledLink>
       </Wrapper>
     </Container>
