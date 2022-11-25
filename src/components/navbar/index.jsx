@@ -14,6 +14,7 @@ import {
   Input,
   Right,
   MenuItem,
+  StyledLink,
 } from "./Navbar.styles";
 
 const Navbar = () => {
@@ -22,9 +23,9 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Left>
-          <Link to="/">
+          <StyledLink to="/">
             <Logo>gap</Logo>
-          </Link>
+          </StyledLink>
         </Left>
         <Center>
           <SearchContainer>
@@ -35,8 +36,14 @@ const Navbar = () => {
           </SearchContainer>
         </Center>
         <Right>
-          <MenuItem>Register</MenuItem>
-          <MenuItem>Sign in</MenuItem>
+          <StyledLink to="/register">
+            <MenuItem>Register</MenuItem>
+          </StyledLink>
+
+          <StyledLink to="/login">
+            <MenuItem>Login</MenuItem>
+          </StyledLink>
+
           <Link to="/cart">
             <MenuItem>
               <Badge badgeContent={quantity} color="primary">

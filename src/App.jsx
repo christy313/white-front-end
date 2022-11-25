@@ -4,7 +4,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate
+  Navigate,
 } from "react-router-dom";
 import Home from "../src/pages/Home";
 import ProductList from "../src/pages/ProductsList";
@@ -15,7 +15,8 @@ import Register from "../src/pages/Register";
 import Success from "../src/pages/Success";
 
 const App = () => {
-  const user = useSelector(state => state.user.currentUser);
+  const user = null;
+  // const user = useSelector((state) => state.user.currentUser);
 
   return (
     <Router>
