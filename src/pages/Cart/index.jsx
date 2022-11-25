@@ -43,6 +43,10 @@ import {
 
 const stripeKey = process.env.REACT_APP_STRIPE;
 
+const user = JSON.parse(localStorage.getItem("persist:root"))?.user;
+const currentUser = user && JSON.parse(user).currentUser;
+const TOKEN = currentUser?.accessToken;
+
 const Cart = () => {
   const [stripeToken, setStripeToken] = useState(null);
   const cart = useSelector((state) => state.cart);
@@ -51,7 +55,6 @@ const Cart = () => {
   const onToken = (token) => {
     setStripeToken(token);
   };
-  console.log(stripeToken);
 
   useEffect(() => {
     const makeRequest = async () => {
@@ -60,7 +63,7 @@ const Cart = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`,
+            // Authorization: `Bearer ${TOKEN}`,
           },
           body: JSON.stringify({
             tokenId: stripeToken.id,
