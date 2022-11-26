@@ -12,6 +12,7 @@ export const Title = styled.h1`
   font-weight: 300;
   text-align: center;
 `;
+
 export const Top = styled.div`
   display: flex;
   align-items: center;
@@ -24,15 +25,16 @@ export const TopButton = styled.button`
   margin: 10px;
   font-weight: 600;
   cursor: pointer;
-  border: ${props => props.type === "filled" && "none"};
-  background-color: ${props =>
+  border: ${(props) => props.type === "filled" && "none"};
+  background-color: ${(props) =>
     props.type === "filled" ? "black" : "transparent"};
-  color: ${props => props.type === "filled" && "white"};
+  color: ${(props) => props.type === "filled" && "white"};
 `;
 
 export const TopTexts = styled.div`
   ${mobile({ display: "none" })}
 `;
+
 export const TopText = styled.span`
   text-decoration: underline;
   cursor: pointer;
@@ -55,6 +57,9 @@ export const Summary = styled.div`
   border-radius: 10px;
   padding: 20px;
   height: 50vh;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 `;
 
 export const Product = styled.div`
@@ -70,6 +75,11 @@ export const ProductDetail = styled.div`
 
 export const Image = styled.img`
   width: 200px;
+  margin-bottom: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border-radius: 20px;
 `;
 
 export const PriceDetail = styled.div`
@@ -95,7 +105,7 @@ export const ProductColor = styled.div`
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: ${props => props.color};
+  background-color: ${(props) => props.color};
 `;
 
 export const ProductSize = styled.div``;
@@ -128,8 +138,8 @@ export const SummaryItem = styled.div`
   margin: 30px 0px;
   display: flex;
   justify-content: space-between;
-  font-weight: ${props => props.type === "total" && "500"};
-  font-size: ${props => props.type === "total" && "24px"};
+  font-weight: ${(props) => props.type === "total" && "500"};
+  font-size: ${(props) => props.type === "total" && "24px"};
 `;
 
 export const SummaryItemText = styled.span``;

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "../../components/Navbar/index";
-import Notice from "../../components/Notice/index";
 import Products from "../../components/Products/index";
-import Newsletter from "../../components/Newsletter/index";
+// import Newsletter from "../../components/Newsletter/index";
 import Footer from "../../components/Footer/index";
 
 import {
@@ -68,7 +67,7 @@ const ProductsList = () => {
       </FilterContainer>
 
       <Products category={category} filters={filters} sort={sort} />
-      <Newsletter />
+      {/* <Newsletter /> */}
       <Footer />
     </Container>
   );

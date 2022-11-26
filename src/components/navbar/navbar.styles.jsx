@@ -4,6 +4,7 @@ import { mobile } from "../../responsive";
 
 export const Container = styled.div`
   height: 60px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 
   font-size: 20px;
   font-weight: bold;
@@ -19,7 +20,6 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
