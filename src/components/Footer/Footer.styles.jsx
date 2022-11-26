@@ -3,20 +3,38 @@ import { mobile } from "../../responsive";
 
 export const Container = styled.div`
   background-color: #f4f4f4;
-  /* display: flex; */
-  flex-shrink: 0;
-  ${mobile({ flexDirection: "column" })}
 `;
 
 export const Wrapper = styled.div`
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-
+  margin: 0 auto;
   display: flex;
   padding: 20px;
   justify-content: space-between;
+
+  ${mobile({ flexDirection: "column", textAlign: "center", fontSize: "12px" })}
+`;
+
+export const Title = styled.div`
+  font-size: 20px;
+  font-weight: 500;
+`;
+
+export const SocialContainer = styled.div`
+  display: flex;
+  ${mobile({
+    flexDirection: "row",
+    marginTop: "10px",
+    justifyContent: "center",
+  })}
+`;
+
+export const SocialIcon = styled.div`
+  cursor: pointer;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  margin-left: 20px;
 `;
 
 // export const Left = styled.div`
@@ -32,23 +50,6 @@ export const Desc = styled.p`
   margin: 20px 0px;
 `;
 
-export const SocialContainer = styled.div`
-  display: flex;
-  flex: 1;
-`;
-
-export const SocialIcon = styled.div`
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  color: white;
-  background-color: #${(props) => props.color};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 20px;
-`;
-
 export const Right = styled.div`
   display: flex;
   /* flex: 1; */
@@ -62,10 +63,6 @@ export const Center = styled.div`
   flex: 1;
   padding: 20px;
   ${mobile({ display: "none" })}
-`;
-
-export const Title = styled.h3`
-  margin-bottom: 30px;
 `;
 
 export const List = styled.ul`

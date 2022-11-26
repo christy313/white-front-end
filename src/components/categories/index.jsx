@@ -7,11 +7,11 @@ import { categories } from "../../data";
 const Categories = () => {
   return (
     <Container>
-      {/* <Wrapper> */}
-      {categories.map((item) => (
-        <CategoryItem item={item} key={item.id} />
-      ))}
-      {/* </Wrapper> */}
+      <Wrapper>
+        {categories.map((item) => (
+          <CategoryItem item={item} key={item.id} />
+        ))}
+      </Wrapper>
     </Container>
   );
 };
