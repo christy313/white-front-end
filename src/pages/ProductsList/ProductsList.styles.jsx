@@ -6,6 +6,11 @@ export const Container = styled.div``;
 export const FilterContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export const Title = styled.h1`

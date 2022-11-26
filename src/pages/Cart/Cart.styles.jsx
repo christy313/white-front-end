@@ -45,19 +45,25 @@ export const TopText = styled.span`
 export const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
   ${mobile({ flexDirection: "column" })}
 `;
 
 export const Info = styled.div`
+  margin-top: 80px;
   flex: 3;
 `;
 
 export const Summary = styled.div`
   flex: 1;
-  border: 0.5px solid lightgray;
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 40px;
-  height: 40vh;
+  height: 390px;
+  max-width: 360px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -121,14 +127,11 @@ export const ProductAmount = styled.div`
   margin: 5px;
   ${mobile({ margin: "5px 15px" })}
 `;
+
 export const ProductPrice = styled.div`
   font-size: 30px;
   font-weight: 200;
   ${mobile({ margin: "20px" })}
-`;
-
-export const Hr = styled.hr`
-  background-color: #eee;
 `;
 
 export const SummaryTitle = styled.h1`
@@ -154,4 +157,5 @@ export const Button = styled.button`
   color: white;
   font-weight: 600;
   border-radius: 20px;
+  cursor: pointer;
 `;
