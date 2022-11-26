@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../redux/apiCalls";
+import Navbar from "../../components/Navbar/index";
+
 import {
   Container,
   Wrapper,
@@ -30,6 +32,7 @@ const Login = () => {
   return (
     <Container>
       <Wrapper>
+        <Navbar />
         <Title>Login</Title>
         <Form>
           <Input

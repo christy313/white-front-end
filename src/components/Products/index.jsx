@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Product from "../Product/index";
-import { Container } from "./Products.styles";
+import { Container, Wrapper } from "./Products.styles";
 // import { popularProducts } from "../../data";
 
 const Products = ({ category, filters, sort }) => {
@@ -54,11 +54,15 @@ const Products = ({ category, filters, sort }) => {
 
   return (
     <Container>
-      {category
-        ? filteredProducts.map((item) => <Product item={item} key={item._id} />)
-        : products
-            .slice(0, 8)
-            .map((item) => <Product item={item} key={item._id} />)}
+      <Wrapper>
+        {category
+          ? filteredProducts.map((item) => (
+              <Product item={item} key={item._id} />
+            ))
+          : products
+              .slice(0, 8)
+              .map((item) => <Product item={item} key={item._id} />)}
+      </Wrapper>
     </Container>
   );
 };
