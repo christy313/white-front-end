@@ -44,4 +44,11 @@ export const Button = styled.button`
   color: gray;
   cursor: pointer;
   font-weight: 600;
+  border-radius: 20px;
+  transition: all 0.5 ease;
+
+  &:hover {
+    background-color: #e9f5f5;
+    transform: scale(1.1);
+  }
 `;

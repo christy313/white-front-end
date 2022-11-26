@@ -12,6 +12,7 @@ import {
   Form,
   Input,
   // Agreement,
+  ButtonWrapper,
   Button,
   StyledLink,
 } from "./Register.styles";
@@ -31,9 +32,9 @@ const Register = () => {
 
   return (
     <Container>
+      <Navbar />
       <Wrapper>
-        <Navbar />
-        <Title>CREATE AN ACCOUNT</Title>
+        <Title>Register</Title>
         <Form>
           <Input
             onChange={(e) => setUsername(e.target.value)}
@@ -50,13 +51,15 @@ const Register = () => {
             type="password"
             placeholder="password"
           />
+          <ButtonWrapper>
+            <Button onClick={handleRegister}>Register</Button>
+            <StyledLink to="/login">Login</StyledLink>
+          </ButtonWrapper>
         </Form>
         {/* <Agreement>
           By creating an account, I consent to the processing of my personal
           data in accordance with the <b>PRIVACY POLICY</b>
         </Agreement> */}
-        <Button onClick={handleRegister}>Register</Button>
-        <StyledLink to="/login">Login</StyledLink>
       </Wrapper>
     </Container>
   );

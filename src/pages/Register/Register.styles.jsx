@@ -11,7 +11,9 @@ export const Container = styled.div`
       rgba(255, 255, 255, 0.5)
     ),
     url("https://images.ctfassets.net/5gvckmvm9289/3BlDoZxSSjqAvv1jBJP7TH/65f9a95484117730ace42abf64e89572/Noissue-x-Creatsy-Tote-Bag-Mockup-Bundle-_4_-2.png");
-  background-size: cover;
+  background-size: auto;
+  background-repeat: no-repeat;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,10 +22,12 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   max-width: 320px;
   padding: 20px;
-  background-color: lightblue;
+  background-color: white;
+  border-radius: 20px;
   text-align: center;
+  border: 1px solid teal;
 
-  ${mobile({ width: "80%" })}
+  ${mobile({ width: "90%" })}
 `;
 
 export const Title = styled.h1`
@@ -32,7 +36,8 @@ export const Title = styled.h1`
 `;
 
 export const Form = styled.form`
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Input = styled.input`
@@ -41,6 +46,8 @@ export const Input = styled.input`
   padding: 10px;
   display: inline-block;
   justify-content: center;
+  border-radius: 20px;
+  border: 1px solid teal;
 `;
 
 // export const Agreement = styled.div`
@@ -49,12 +56,20 @@ export const Input = styled.input`
 //   text-align: left;
 // `;
 
+export const ButtonWrapper = styled.div`
+  display: flex;
+  margin: 20px;
+  padding: 10px;
+  align-items: center;
+`;
+
 export const Button = styled.button`
   border: none;
   padding: 15px 20px;
   background-color: teal;
   color: white;
   cursor: pointer;
+  border-radius: 20px;
 `;
 
 export const StyledLink = styled(Link)`
@@ -62,4 +77,5 @@ export const StyledLink = styled(Link)`
   font-size: 16px;
   text-decoration: none;
   cursor: pointer;
+  color: teal;
 `;

@@ -12,6 +12,7 @@ import {
   Input,
   // Agreement,
   Button,
+  ButtonWrapper,
   StyledLink,
   Error,
 } from "./Login.styles";
@@ -31,8 +32,8 @@ const Login = () => {
 
   return (
     <Container>
+      <Navbar />
       <Wrapper>
-        <Navbar />
         <Title>Login</Title>
         <Form>
           <Input
@@ -44,10 +45,12 @@ const Login = () => {
             type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button onClick={handleLogin} disabled={isFetching}>
-            LOGIN
-          </Button>
-          <StyledLink to="/register">Register</StyledLink>
+          <ButtonWrapper>
+            <Button onClick={handleLogin} disabled={isFetching}>
+              LOGIN
+            </Button>
+            <StyledLink to="/register">Register</StyledLink>
+          </ButtonWrapper>
           {error && <Error>Something went wrong</Error>}
           {/* <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link> */}
         </Form>
