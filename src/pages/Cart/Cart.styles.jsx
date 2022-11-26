@@ -45,11 +45,10 @@ export const TopText = styled.span`
 export const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
 
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+
   ${mobile({ flexDirection: "column" })}
 `;
 
@@ -64,6 +63,8 @@ export const Summary = styled.div`
   padding: 40px;
   height: 390px;
   max-width: 360px;
+  position: sticky;
+  top: 80px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
