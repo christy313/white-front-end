@@ -26,22 +26,27 @@ export const Container = styled.div`
   align-items: center;
   background-color: #f5fbfd;
   position: relative;
+  border-radius: 20px;
 
   &:hover ${Info} {
     opacity: 1;
+    border-radius: 20px;
   }
 `;
 
 export const Circle = styled.div`
-  width: 180px;
-  height: 180px;
+  /* width: 200px;
+  height: 200px;
   border-radius: 50%;
   background-color: white;
-  position: absolute;
+  position: absolute; */
 `;
 
 export const Image = styled.img`
-  width: 180px;
+  border-radius: 20px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
   z-index: 2;
 `;
 

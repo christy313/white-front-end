@@ -2,18 +2,31 @@ import styled from "styled-components";
 import { mobile } from "../../responsive";
 
 export const Container = styled.div`
-  display: flex;
+  background-color: #f4f4f4;
+  /* display: flex; */
+  flex-shrink: 0;
   ${mobile({ flexDirection: "column" })}
 `;
 
-export const Left = styled.div`
-  flex: 1;
+export const Wrapper = styled.div`
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+
   display: flex;
-  flex-direction: column;
   padding: 20px;
+  justify-content: space-between;
+  align-items: center;
 `;
 
-export const Logo = styled.h1``;
+// export const Left = styled.div`
+//   flex: 1;
+//   display: flex;
+//   flex-direction: column;
+//   padding: 20px;
+// `;
+
+// export const Logo = styled.h1``;
 
 export const Desc = styled.p`
   margin: 20px 0px;
@@ -21,6 +34,7 @@ export const Desc = styled.p`
 
 export const SocialContainer = styled.div`
   display: flex;
+  flex: 1;
 `;
 
 export const SocialIcon = styled.div`
@@ -28,7 +42,7 @@ export const SocialIcon = styled.div`
   height: 40px;
   border-radius: 50%;
   color: white;
-  background-color: #${props => props.color};
+  background-color: #${(props) => props.color};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,8 +50,11 @@ export const SocialIcon = styled.div`
 `;
 
 export const Right = styled.div`
-  flex: 1;
+  display: flex;
+  /* flex: 1; */
   padding: 20px;
+  justify-content: space-between;
+  align-items: center;
   ${mobile({ backgroundColor: "#fff8f8" })}
 `;
 

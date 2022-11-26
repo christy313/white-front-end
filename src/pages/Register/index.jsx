@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { RegisterUser } from "../../redux/apiCalls";
 
+import Navbar from "../../components/Navbar/index";
+
 import {
   Container,
   Wrapper,
@@ -30,6 +32,7 @@ const Register = () => {
   return (
     <Container>
       <Wrapper>
+        <Navbar />
         <Title>CREATE AN ACCOUNT</Title>
         <Form>
           <Input

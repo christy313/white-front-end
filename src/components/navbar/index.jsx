@@ -36,11 +36,11 @@ const Navbar = () => {
       <Wrapper>
         <Left>
           <StyledLink to="/">
-            <Logo>gap</Logo>
+            <Logo>Gap</Logo>
           </StyledLink>
-          <StyledLink>Women</StyledLink>
-          <StyledLink>Men</StyledLink>
-          <StyledLink>Kids</StyledLink>
+          <StyledLink to="/products/women">Women</StyledLink>
+          <StyledLink to="/products/coat">Men</StyledLink>
+          <StyledLink to="/products/jeans">Kids</StyledLink>
         </Left>
         {/* <Center>
           <SearchContainer>

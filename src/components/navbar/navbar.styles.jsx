@@ -5,6 +5,9 @@ import { mobile } from "../../responsive";
 export const Container = styled.div`
   height: 60px;
 
+  font-size: 20px;
+  font-weight: bold;
+
   position: fixed;
   top: 0;
   width: 100%;
@@ -77,7 +80,6 @@ export const Right = styled.div`
 `;
 
 export const MenuItem = styled.div`
-  font-size: 14px;
   cursor: pointer;
   margin-left: 24px;
 
