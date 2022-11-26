@@ -35,7 +35,7 @@ export const Wrapper = styled.div`
 
 export const Title = styled.h1`
   font-size: 24px;
-  font-weight: 300;
+  font-weight: 600;
 `;
 
 export const Form = styled.form`
@@ -73,6 +73,7 @@ export const Button = styled.button`
   color: white;
   cursor: pointer;
   border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 `;
 
 export const StyledLink = styled(Link)`
@@ -81,4 +82,8 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
   cursor: pointer;
   color: teal;
+`;
+
+export const Error = styled.h3`
+  color: #d81159;
 `;

@@ -20,12 +20,15 @@ import {
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState(false);
+
   const dispatch = useDispatch();
   const { isFetching, error } = useSelector((state) => state.user);
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
+    if (!username || !password) return setErrorMessage(true);
     login(dispatch, { username, password });
     navigate("/");
   };
@@ -51,8 +54,7 @@ const Login = () => {
             </Button>
             <StyledLink to="/register">Register</StyledLink>
           </ButtonWrapper>
-          {error && <Error>Something went wrong</Error>}
-          {/* <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link> */}
+          {error && errorMessage && <Error>Something went wrong!</Error>}
         </Form>
       </Wrapper>
     </Container>

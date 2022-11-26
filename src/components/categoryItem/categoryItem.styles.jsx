@@ -4,7 +4,7 @@ import { mobile } from "../../responsive";
 export const Container = styled.div`
   flex: 1;
   margin: 5px;
-  height: 70vh;
+  height: 60vh;
   position: relative;
   min-width: 280px;
   border-radius: 20px;

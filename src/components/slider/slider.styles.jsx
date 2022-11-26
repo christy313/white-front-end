@@ -22,8 +22,8 @@ export const Arrow = styled.div`
   top: 0;
   bottom: 0;
 
-  left: ${props => props.direction === "left" && "10px"};
-  right: ${props => props.direction === "right" && "10px"};
+  left: ${(props) => props.direction === "left" && "10px"};
+  right: ${(props) => props.direction === "right" && "10px"};
 
   cursor: pointer;
   opacity: 0.5;
@@ -35,7 +35,7 @@ export const Wrapper = styled.div`
   height: 100%;
   display: flex;
   transition: all 1.5s ease;
-  transform: translateX(${props => props.slideIndex * -100}vw);
+  transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
 export const Slide = styled.div`
@@ -44,7 +44,7 @@ export const Slide = styled.div`
   width: 100vw;
   height: 100vh;
 
-  background-color: #${props => props.bg};
+  background-color: #${(props) => props.bg};
 `;
 
 export const ImgContainer = styled.div`
@@ -73,8 +73,16 @@ export const Desc = styled.p`
 `;
 
 export const Button = styled.button`
-  padding: 10px;
+  padding: 15px;
   font-size: 20px;
   background-color: transparent;
   cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  border-radius: 20px;
+  border: none;
+
+  &:hover {
+    background-color: teal;
+    color: white;
+  }
 `;

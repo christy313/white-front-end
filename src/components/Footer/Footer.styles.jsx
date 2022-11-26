@@ -38,6 +38,10 @@ export const SocialIcon = styled.div`
   align-items: center;
   justify-content: center;
   margin-left: 20px;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 `;
 
 // export const Left = styled.div`
