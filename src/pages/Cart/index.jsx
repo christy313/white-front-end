@@ -33,7 +33,6 @@ import {
   ProductAmountContainer,
   ProductAmount,
   ProductPrice,
-  Hr,
   SummaryTitle,
   SummaryItem,
   SummaryItemText,
@@ -81,10 +80,10 @@ const Cart = () => {
 
   return (
     <Container>
-      <Notice />
+      {/* <Notice /> */}
       <Navbar />
       <Wrapper>
-        <Title>Your bag</Title>
+        {/* <Title>Your bag</Title>
         <Top>
           <TopButton>CONTINUE SHOPPING</TopButton>
           <TopTexts>
@@ -103,7 +102,7 @@ const Cart = () => {
           >
             <TopButton type="filled">CHECKOUT NOW</TopButton>
           </StripeCheckout>
-        </Top>
+        </Top> */}
         <Bottom>
           <Info>
             {cart.products.map((product) => (
@@ -135,7 +134,6 @@ const Cart = () => {
                 </PriceDetail>
               </Product>
             ))}
-            <Hr />
           </Info>
           <Summary>
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
