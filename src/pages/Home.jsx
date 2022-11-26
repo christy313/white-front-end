@@ -12,7 +12,7 @@ const Home = () => {
     <div>
       {/* <Notice /> */}
       <Navbar />
-      <Slider />
+      {/* <Slider /> */}
       <Categories />
       <Products />
       {/* <Newsletter /> */}

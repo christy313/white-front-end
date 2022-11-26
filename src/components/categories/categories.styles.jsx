@@ -4,6 +4,7 @@ import { mobile } from "../../responsive";
 export const Container = styled.div`
   display: flex;
   justify-content: center;
+  margin-top: 80px;
 `;
 
 export const Wrapper = styled.div`

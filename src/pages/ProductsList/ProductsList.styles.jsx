@@ -27,6 +27,10 @@ export const FilterText = styled.span`
 export const Select = styled.select`
   padding: 10px;
   margin-right: 20px;
+  border-radius: 20px;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+
   ${mobile({ margin: "10px 0px" })}
 `;
 

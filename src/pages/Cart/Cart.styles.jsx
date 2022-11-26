@@ -24,6 +24,7 @@ export const TopButton = styled.button`
   padding: 10px;
   margin: 10px;
   font-weight: 600;
+  border-radius: 20px;
   cursor: pointer;
   border: ${(props) => props.type === "filled" && "none"};
   background-color: ${(props) =>
@@ -55,8 +56,8 @@ export const Summary = styled.div`
   flex: 1;
   border: 0.5px solid lightgray;
   border-radius: 10px;
-  padding: 20px;
-  height: 50vh;
+  padding: 40px;
+  height: 40vh;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -152,4 +153,5 @@ export const Button = styled.button`
   background-color: black;
   color: white;
   font-weight: 600;
+  border-radius: 20px;
 `;
