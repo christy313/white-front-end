@@ -3,7 +3,15 @@ import { mobile } from "../../responsive";
 
 export const Container = styled.div`
   display: flex;
-  padding: 20px;
+  justify-content: center;
+`;
+
+export const Wrapper = styled.div`
+  display: flex;
   justify-content: space-between;
+  align-items: center;
+
+  max-width: 1200px;
+  margin: 0 auto;
   ${mobile({ padding: "0px", flexDirection: "column" })}
 `;

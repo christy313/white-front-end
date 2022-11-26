@@ -3,17 +3,20 @@ import { mobile } from "../../responsive";
 
 export const Container = styled.div`
   flex: 1;
-  margin: 3px;
+  margin: 5px;
   height: 70vh;
   position: relative;
+  min-width: 280px;
+  /* ${mobile({ margin: "30px" })} */
 `;
 
 export const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 20px;
 
-  ${mobile({ height: "30vh" })}
+  ${mobile({ height: "40vh" })}
 `;
 
 export const Info = styled.div`
@@ -26,6 +29,7 @@ export const Info = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 `;
 
 export const Title = styled.h1`
@@ -40,4 +44,11 @@ export const Button = styled.button`
   color: gray;
   cursor: pointer;
   font-weight: 600;
+  border-radius: 20px;
+  transition: all 0.5 ease;
+
+  &:hover {
+    background-color: #e9f5f5;
+    transform: scale(1.1);
+  }
 `;

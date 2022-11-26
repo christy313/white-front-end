@@ -1,5 +1,8 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { logoutUser } from "../../redux/apiCalls";
+
 import { Link } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import Badge from "@mui/material/Badge";
@@ -14,29 +17,56 @@ import {
   Input,
   Right,
   MenuItem,
+  StyledLink,
 } from "./Navbar.styles";
 
 const Navbar = () => {
   const quantity = useSelector((state) => state.cart.quantity);
+  const user = useSelector((state) => state.user.currentUser);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    logoutUser(dispatch);
+    navigate("/");
+  };
+
   return (
     <Container>
       <Wrapper>
         <Left>
-          <Link to="/">
-            <Logo>gap</Logo>
-          </Link>
+          <StyledLink to="/">
+            <Logo>Gap</Logo>
+          </StyledLink>
+          <StyledLink to="/products/women">Women</StyledLink>
+          <StyledLink to="/products/coat">Men</StyledLink>
+          <StyledLink to="/products/jeans">Kids</StyledLink>
         </Left>
-        <Center>
+        {/* <Center>
           <SearchContainer>
             <Input placeholder="Search" />
             <SearchIcon
               style={{ color: "gray", fontSize: "16", textAlign: "flex-end" }}
             />
           </SearchContainer>
-        </Center>
+        </Center> */}
         <Right>
-          <MenuItem>Register</MenuItem>
-          <MenuItem>Sign in</MenuItem>
+          {user ? (
+            <StyledLink to="/" onClick={handleLogout}>
+              <MenuItem>Logout</MenuItem>
+            </StyledLink>
+          ) : (
+            <>
+              <StyledLink to="/register">
+                <MenuItem>Register</MenuItem>
+              </StyledLink>
+
+              <StyledLink to="/login">
+                <MenuItem>Login</MenuItem>
+              </StyledLink>
+            </>
+          )}
+
           <Link to="/cart">
             <MenuItem>
               <Badge badgeContent={quantity} color="primary">
