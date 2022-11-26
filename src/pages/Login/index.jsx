@@ -20,41 +20,40 @@ import {
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState(false);
 
   const dispatch = useDispatch();
-  const { isFetching, error } = useSelector((state) => state.user);
+  const { error, currentUser } = useSelector((state) => state.user);
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (!username || !password) return setErrorMessage(true);
     login(dispatch, { username, password });
-    navigate("/");
+    if (currentUser) navigate("/");
   };
 
   return (
     <Container>
       <Navbar />
       <Wrapper>
+        {error && <Error>Something went wrong!</Error>}
         <Title>Login</Title>
-        <Form>
+        <Form onSubmit={handleLogin}>
+          <label htmlFor="username">Username:</label>
           <Input
             placeholder="username"
             onChange={(e) => setUsername(e.target.value)}
           />
+
+          <label htmlFor="password">Password:</label>
           <Input
             placeholder="password"
             type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
           <ButtonWrapper>
-            <Button onClick={handleLogin} disabled={isFetching}>
-              LOGIN
-            </Button>
+            <Button>LOGIN</Button>
             <StyledLink to="/register">Register</StyledLink>
           </ButtonWrapper>
-          {error && errorMessage && <Error>Something went wrong!</Error>}
         </Form>
       </Wrapper>
     </Container>

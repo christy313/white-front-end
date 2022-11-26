@@ -41,23 +41,20 @@ export const Title = styled.h1`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
+
+  & > label {
+    margin: 14px;
+  }
 `;
 
 export const Input = styled.input`
   min-width: 200px;
-  margin: 20px 10px 0px 0px;
   padding: 10px;
   display: inline-block;
   justify-content: center;
   border-radius: 20px;
   border: 1px solid teal;
 `;
-
-// export const Agreement = styled.div`
-//   font-size: 12px;
-//   margin: 20px 0px;
-//   text-align: left;
-// `;
 
 export const ButtonWrapper = styled.div`
   display: flex;
@@ -86,4 +83,5 @@ export const StyledLink = styled(Link)`
 
 export const Error = styled.h3`
   color: #d81159;
+  padding: 10px;
 `;

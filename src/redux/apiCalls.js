@@ -14,38 +14,46 @@ import {
 export const RegisterUser = async (dispatch, user) => {
   dispatch(registerStart());
 
-  const res = await fetch("http://localhost:8080/api/auth/register", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      username: user.username,
-      email: user.email,
-      password: user.password,
-    }),
-  });
-  const data = await res.json();
-  // remove try catch block for not getting error action
-  data.username ? dispatch(registerSuccess(data)) : dispatch(registerFailure());
+  try {
+    const res = await fetch("http://localhost:8080/api/auth/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username: user.username,
+        email: user.email,
+        password: user.password,
+      }),
+    });
+    const data = await res.json();
+    if (!data.username) throw new Error("Server error - user result");
+    dispatch(registerSuccess(data));
+  } catch (error) {
+    dispatch(registerFailure());
+  }
 };
 
 export const login = async (dispatch, user) => {
   dispatch(loginStart());
 
-  const res = await fetch("http://localhost:8080/api/auth/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      username: user.username,
-      password: user.password,
-    }),
-  });
-  const data = await res.json();
-  // remove try catch block for not getting error action
-  data.username ? dispatch(loginSuccess(data)) : dispatch(loginFailure());
+  try {
+    const res = await fetch("http://localhost:8080/api/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username: user.username,
+        password: user.password,
+      }),
+    });
+    const data = await res.json();
+    if (!data.username) throw new Error("Server error - user result");
+    dispatch(loginSuccess(data));
+  } catch (error) {
+    dispatch(loginFailure());
+  }
 };
 
 export const logoutUser = async (dispatch) => {

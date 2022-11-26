@@ -39,22 +39,20 @@ export const Title = styled.h1`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
+
+  & > label {
+    margin: 14px;
+  }
 `;
 
 export const Input = styled.input`
   min-width: 200px;
-  margin: 20px 10px 0px 0px;
   padding: 10px;
   display: inline-block;
   justify-content: center;
   border-radius: 20px;
   border: 1px solid teal;
 `;
-
-// export const Agreement = styled.span`
-//   font-size: 12px;
-//   margin: 20px 0px;
-// `;
 
 export const ButtonWrapper = styled.div`
   display: flex;
@@ -71,11 +69,6 @@ export const Button = styled.button`
   cursor: pointer;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-
-  &:disabled {
-    color: teal;
-    cursor: not-allowed;
-  }
 `;
 
 export const StyledLink = styled(Link)`
@@ -88,4 +81,5 @@ export const StyledLink = styled(Link)`
 
 export const Error = styled.h3`
   color: #d81159;
+  padding: 10px;
 `;
