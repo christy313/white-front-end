@@ -3,8 +3,8 @@ import { useDispatch } from "react-redux";
 import { addProduct } from "../../redux/cartRedux";
 import { useLocation } from "react-router-dom";
 import Navbar from "../../components/Navbar";
-import Notice from "../../components/Notice";
-import Newsletter from "../../components/Newsletter";
+// import Notice from "../../components/Notice";
+// import Newsletter from "../../components/Newsletter";
 import Footer from "../../components/Footer";
 
 import AddIcon from "@mui/icons-material/Add";

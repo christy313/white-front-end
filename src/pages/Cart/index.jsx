@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import StripeCheckout from "react-stripe-checkout";
 import { useSelector } from "react-redux";
 
-import Notice from "../../components/Notice";
+// import Notice from "../../components/Notice";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
@@ -13,12 +13,12 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import {
   Container,
   Wrapper,
-  Title,
-  Top,
+  // Title,
+  // Top,
   Bottom,
-  TopButton,
-  TopTexts,
-  TopText,
+  // TopButton,
+  // TopTexts,
+  // TopText,
   Info,
   Summary,
   ProductDetail,
@@ -62,7 +62,7 @@ const Cart = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            // Authorization: `Bearer ${TOKEN}`,
+            Authorization: `Bearer ${TOKEN}`,
           },
           body: JSON.stringify({
             tokenId: stripeToken.id,
