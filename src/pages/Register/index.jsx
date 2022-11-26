@@ -23,54 +23,53 @@ const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState(false);
 
   const dispatch = useDispatch();
-  const { isFetching, error } = useSelector((state) => state.user);
-
+  const { error, currentUser } = useSelector((state) => state.user);
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
-    if (!username || !password || !email) return setErrorMessage(true);
     RegisterUser(dispatch, { username, email, password });
-    navigate("/");
+    if (currentUser) navigate("/");
   };
 
   return (
     <Container>
       <Navbar />
       <Wrapper>
+        {error && <Error>Something went wrong!</Error>}
         <Title>Register</Title>
-        <Form>
+        <Form onSubmit={handleRegister}>
+          <label htmlFor="username">Username:</label>
           <Input
             onChange={(e) => setUsername(e.target.value)}
             type="text"
+            id="username"
             placeholder="username"
           />
+
+          <label htmlFor="email">Email:</label>
           <Input
             onChange={(e) => setEmail(e.target.value)}
             type="email"
+            id="email"
             placeholder="email"
+            required
           />
+
+          <label htmlFor="password">Password:</label>
           <Input
             onChange={(e) => setPassword(e.target.value)}
             type="password"
+            id="password"
             placeholder="password"
           />
           <ButtonWrapper>
-            <Button onClick={handleRegister} disabled={isFetching}>
-              Register
-            </Button>
+            <Button>Register</Button>
             <StyledLink to="/login">Login</StyledLink>
           </ButtonWrapper>
         </Form>
-        {error && errorMessage && <Error>Something went wrong!</Error>}
-
-        {/* <Agreement>
-          By creating an account, I consent to the processing of my personal
-          data in accordance with the <b>PRIVACY POLICY</b>
-        </Agreement> */}
       </Wrapper>
     </Container>
   );
