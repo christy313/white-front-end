@@ -3,9 +3,11 @@ import { mobile } from "../../responsive";
 
 export const Container = styled.div`
   flex: 1;
-  margin: 15px;
+  margin: 5px;
   height: 70vh;
   position: relative;
+  min-width: 280px;
+  /* ${mobile({ margin: "30px" })} */
 `;
 
 export const Image = styled.img`
@@ -14,7 +16,7 @@ export const Image = styled.img`
   object-fit: cover;
   border-radius: 20px;
 
-  ${mobile({ height: "30vh" })}
+  ${mobile({ height: "40vh" })}
 `;
 
 export const Info = styled.div`
@@ -27,6 +29,7 @@ export const Info = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 `;
 
 export const Title = styled.h1`
