@@ -51,7 +51,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <ButtonWrapper>
-            <Button>LOGIN</Button>
+            <Button>Login</Button>
             <StyledLink to="/register">Register</StyledLink>
           </ButtonWrapper>
         </Form>

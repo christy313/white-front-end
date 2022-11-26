@@ -71,7 +71,7 @@ const SingleProduct = () => {
   return (
     <Container>
       <Navbar />
-      <Notice />
+      {/* <Notice /> */}
       <Wrapper>
         <ImgContainer>
           <Image src={product.img} />
@@ -114,7 +114,7 @@ const SingleProduct = () => {
           </AddContainer>
         </InfoContainer>
       </Wrapper>
-      <Newsletter />
+      {/* <Newsletter /> */}
       <Footer />
     </Container>
   );
