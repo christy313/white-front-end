@@ -8,8 +8,8 @@ import {
   logout,
 } from "./userRedux";
 
-// const Token = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user)
-//   .currentUser.accessToken;
+// const TOKEN = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user)
+//   .currentUser?.accessToken;
 
 export const RegisterUser = async (dispatch, user) => {
   dispatch(registerStart());

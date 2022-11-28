@@ -81,10 +81,9 @@ export const Right = styled.div`
 
 export const MenuItem = styled.div`
   cursor: pointer;
-  /* margin-left: 24px; */
   &:hover {
     color: teal;
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
@@ -101,6 +100,6 @@ export const StyledLink = styled(Link)`
 
   &:hover {
     color: teal;
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 `;

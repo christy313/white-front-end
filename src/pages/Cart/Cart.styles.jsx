@@ -61,13 +61,14 @@ export const Summary = styled.div`
   flex: 1;
   border-radius: 20px;
   padding: 40px;
-  height: 390px;
+  height: 450px;
   max-width: 360px;
   position: sticky;
   top: 80px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  margin-top: 80px;
 `;
 
 export const Product = styled.div`
@@ -82,8 +83,10 @@ export const ProductDetail = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 200px;
-  margin-bottom: 20px;
+  width: 400px;
+  height: 80%;
+  object-fit: cover;
+  /* margin-bottom: 20px; */
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -93,21 +96,28 @@ export const Image = styled.img`
 export const PriceDetail = styled.div`
   flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 20px;
+  /* align-items: center; */
+  /* justify-content: center; */
   flex-direction: column;
 `;
 
 export const Details = styled.div`
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: space-around; */
 `;
 
-export const ProductName = styled.div``;
+export const ProductName = styled.div`
+  margin: 20px;
+  font-size: 20px;
+  font-weight: 600;
+`;
 
-export const ProductId = styled.div``;
+export const ProductId = styled.div`
+  margin: 20px;
+`;
 
 export const ProductColor = styled.div`
   width: 20px;
@@ -121,11 +131,20 @@ export const ProductSize = styled.div``;
 export const ProductAmountContainer = styled.div`
   display: flex;
   align-items: center;
+  margin: 10px 0;
 `;
 
 export const ProductAmount = styled.div`
-  font-size: 24px;
-  margin: 5px;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid teal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 5px;
+
   ${mobile({ margin: "5px 15px" })}
 `;
 
@@ -159,4 +178,15 @@ export const Button = styled.button`
   font-weight: 600;
   border-radius: 20px;
   cursor: pointer;
+  margin-top: 15px;
+`;
+
+export const RemoveProduct = styled.button`
+  border-radius: 20px;
+  border: none;
+  padding: 10px;
+  color: teal;
+  margin: 20px;
+  cursor: pointer;
+  width: 80px;
 `;

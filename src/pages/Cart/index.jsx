@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import StripeCheckout from "react-stripe-checkout";
-import { useSelector } from "react-redux";
 
-// import Notice from "../../components/Notice";
+import { deleteCartItem, clearCartItem } from "../../redux/cartRedux";
+
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
@@ -26,13 +27,14 @@ import {
   Image,
   PriceDetail,
   ProductName,
-  ProductId,
-  ProductColor,
-  ProductSize,
+  // ProductId,
+  // ProductColor,
+  // ProductSize,
   Details,
   ProductAmountContainer,
   ProductAmount,
   ProductPrice,
+  RemoveProduct,
   SummaryTitle,
   SummaryItem,
   SummaryItemText,
@@ -48,8 +50,12 @@ const TOKEN = currentUser?.accessToken;
 
 const Cart = () => {
   const [stripeToken, setStripeToken] = useState(null);
+  const [quantity, setQuantity] = useState("");
+  // const products = useSelector((state) => state.cart.products);
+
   const cart = useSelector((state) => state.cart);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const onToken = (token) => {
     setStripeToken(token);
@@ -62,7 +68,7 @@ const Cart = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${TOKEN}`,
+            // Authorization: `Bearer ${TOKEN}`,
           },
           body: JSON.stringify({
             tokenId: stripeToken.id,
@@ -78,9 +84,24 @@ const Cart = () => {
     stripeToken && makeRequest();
   }, [stripeToken, navigate, cart.total]);
 
+  const handleQuantity = (type) => {
+    if (type === "dec") {
+      quantity > 1 && setQuantity(quantity - 1);
+    } else {
+      setQuantity(quantity + 1);
+    }
+  };
+
+  const handleRemove = (id) => {
+    dispatch(deleteCartItem(id));
+  };
+
+  const handleClear = () => {
+    dispatch(clearCartItem());
+  };
+
   return (
     <Container>
-      {/* <Notice /> */}
       <Navbar />
       <Wrapper>
         {/* <Title>Your bag</Title>
@@ -110,28 +131,35 @@ const Cart = () => {
                 <ProductDetail>
                   <Image src={product.img} />
                   <Details>
-                    <ProductName>
-                      <b>Product:</b> {product.title}
-                    </ProductName>
-                    <ProductId>
+                    <ProductName>{product.title}</ProductName>
+                    {/* <ProductId>
                       <b>ID:</b> {product._id}
-                    </ProductId>
-                    <ProductColor color={product.color} />
-                    <ProductSize>
+                    </ProductId> */}
+                    {/* <ProductColor color={product.color} /> */}
+                    {/* <ProductSize>
                       <b>Size:</b> {product.size}
-                    </ProductSize>
+                    </ProductSize> */}
+                    <PriceDetail>
+                      <ProductAmountContainer>
+                        <RemoveIcon
+                          onClick={() => handleQuantity("dec")}
+                          style={{ cursor: "pointer" }}
+                        />
+                        <ProductAmount>{product.quantity}</ProductAmount>
+                        <AddIcon
+                          onClick={() => handleQuantity("inc")}
+                          style={{ cursor: "pointer" }}
+                        />
+                      </ProductAmountContainer>
+                      <ProductPrice>
+                        $ {product.price * product.quantity}
+                      </ProductPrice>
+                    </PriceDetail>
+                    <RemoveProduct onClick={() => handleRemove(product._id)}>
+                      Remove
+                    </RemoveProduct>
                   </Details>
                 </ProductDetail>
-                <PriceDetail>
-                  <ProductAmountContainer>
-                    <AddIcon />
-                    <ProductAmount>{product.quantity}</ProductAmount>
-                    <RemoveIcon />
-                  </ProductAmountContainer>
-                  <ProductPrice>
-                    $ {product.price * product.quantity}
-                  </ProductPrice>
-                </PriceDetail>
               </Product>
             ))}
           </Info>
@@ -166,6 +194,7 @@ const Cart = () => {
             >
               <Button>Checkout Now</Button>
             </StripeCheckout>
+            <Button onClick={handleClear}>clear all</Button>
           </Summary>
         </Bottom>
       </Wrapper>
