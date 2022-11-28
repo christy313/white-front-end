@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { addProduct } from "../../redux/cartRedux";
+import { addCartItem } from "../../redux/cartRedux";
 import { useLocation } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 // import Notice from "../../components/Notice";
@@ -64,8 +64,12 @@ const SingleProduct = () => {
     }
   };
 
+  // const handleClick = () => {
+  //   dispatch(addProduct({ ...product, quantity, color, size }));
+  // };
+
   const handleClick = () => {
-    dispatch(addProduct({ ...product, quantity, color, size }));
+    dispatch(addCartItem({ ...product, quantity }));
   };
 
   return (
@@ -82,24 +86,24 @@ const SingleProduct = () => {
           <Desc>{product.desc}</Desc>
           <Price>$ {product.price}</Price>
           <FilterContainer>
-            <Filter>
+            {/* <Filter>
               <FilterTitle>Color</FilterTitle>
               {product.color?.map((c) => (
                 <FilterColor color={c} key={c} onClick={() => setColor(c)} />
               ))}
-            </Filter>
-            <Filter>
+            </Filter> */}
+            {/* <Filter>
               <FilterTitle>Size</FilterTitle>
               <FilterSize onChange={(e) => setSize(e.target.value)}>
                 {product.size?.map((s) => (
                   <FilterSizeOption key={s}>{s}</FilterSizeOption>
                 ))}
               </FilterSize>
-            </Filter>
+            </Filter> */}
           </FilterContainer>
 
           <AddContainer>
-            <AmountContainer>
+            {/* <AmountContainer>
               <RemoveIcon
                 onClick={() => handleQuantity("dec")}
                 style={{ cursor: "pointer" }}
@@ -109,7 +113,7 @@ const SingleProduct = () => {
                 onClick={() => handleQuantity("inc")}
                 style={{ cursor: "pointer" }}
               />
-            </AmountContainer>
+            </AmountContainer> */}
             <Button onClick={handleClick}>Add to Cart</Button>
           </AddContainer>
         </InfoContainer>
