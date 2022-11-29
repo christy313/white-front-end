@@ -50,8 +50,7 @@ const TOKEN = currentUser?.accessToken;
 
 const Cart = () => {
   const [stripeToken, setStripeToken] = useState(null);
-  const [quantity, setQuantity] = useState("");
-  // const products = useSelector((state) => state.cart.products);
+  const [quantity, setQuantity] = useState(1);
 
   const cart = useSelector((state) => state.cart);
   const navigate = useNavigate();
@@ -98,6 +97,28 @@ const Cart = () => {
 
   const handleClear = () => {
     dispatch(clearCartItem());
+  };
+
+  const handleCheckout = () => {
+    fetch("http://localhost:8080/api/checkout/create-checkout-session", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        amount: cart.total * 100,
+      }),
+    })
+      .then((res) => {
+        if (res.ok) return res.json();
+        return res.json().then((json) => Promise.reject(json));
+      })
+      .then(({ url }) => {
+        window.location = url;
+      })
+      .catch((e) => {
+        console.error(e.error);
+      });
   };
 
   return (
@@ -195,6 +216,7 @@ const Cart = () => {
               <Button>Checkout Now</Button>
             </StripeCheckout>
             <Button onClick={handleClear}>clear all</Button>
+            <button onClick={handleCheckout}>checkout stripe</button>
           </Summary>
         </Bottom>
       </Wrapper>

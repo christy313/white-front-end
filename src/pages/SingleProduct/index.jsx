@@ -56,13 +56,13 @@ const SingleProduct = () => {
     fetchProducts();
   }, [id]);
 
-  const handleQuantity = (type) => {
-    if (type === "dec") {
-      quantity > 1 && setQuantity(quantity - 1);
-    } else {
-      setQuantity(quantity + 1);
-    }
-  };
+  // const handleQuantity = (type) => {
+  //   if (type === "dec") {
+  //     quantity > 1 && setQuantity(quantity - 1);
+  //   } else {
+  //     setQuantity(quantity + 1);
+  //   }
+  // };
 
   // const handleClick = () => {
   //   dispatch(addProduct({ ...product, quantity, color, size }));
