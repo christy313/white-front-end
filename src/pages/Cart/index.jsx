@@ -53,6 +53,7 @@ const Cart = () => {
   const [quantity, setQuantity] = useState(1);
 
   const cart = useSelector((state) => state.cart);
+  let products = cart.products || [];
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -147,7 +148,7 @@ const Cart = () => {
         </Top> */}
         <Bottom>
           <Info>
-            {cart.products.map((product) => (
+            {products.map((product) => (
               <Product key={product._id}>
                 <ProductDetail>
                   <Image src={product.img} />
