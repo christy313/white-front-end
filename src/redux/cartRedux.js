@@ -22,10 +22,17 @@ const cartSlice = createSlice({
           ...state.products[existingIndex],
           quantity: state.products[existingIndex].quantity + 1,
         };
+        state.quantity += 1;
       } else {
         let tempProductItem = { ...action.payload, quantity: 1 };
         state.products.push(tempProductItem);
+        state.quantity += 1;
       }
+
+      state.total = state.products.reduce((total, product) => {
+        const amount = product.price * product.quantity;
+        return total + amount;
+      }, 0);
     },
     deleteCartItem: (state, action) => {
       state.quantity -= 1;
