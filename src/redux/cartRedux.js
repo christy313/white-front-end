@@ -13,6 +13,20 @@ const cartSlice = createSlice({
       state.products.push(action.payload);
       state.total += action.payload.price * action.payload.quantity;
     },
+    increaseCartItem: (state, action) => {
+      const existingIndex = state.products.findIndex(
+        (item) => item._id === action.payload._id
+      );
+      if (existingIndex >= 0) {
+        state.products[existingIndex] = {
+          ...state.products[existingIndex],
+          quantity: state.products[existingIndex].quantity + 1,
+        };
+      } else {
+        let tempProductItem = { ...action.payload, quantity: 1 };
+        state.products.push(tempProductItem);
+      }
+    },
     deleteCartItem: (state, action) => {
       state.quantity -= 1;
       state.products = state.products.filter(
@@ -31,5 +45,6 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addCartItem, deleteCartItem, clearCartItem } = cartSlice.actions;
+export const { addCartItem, deleteCartItem, clearCartItem, increaseCartItem } =
+  cartSlice.actions;
 export default cartSlice.reducer;

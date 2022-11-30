@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { addCartItem } from "../../redux/cartRedux";
+import {
+  addCartItem,
+  increaseCartItem,
+  clearCartItem,
+} from "../../redux/cartRedux";
 import { useLocation } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 // import Notice from "../../components/Notice";
@@ -30,6 +34,7 @@ import {
   Amount,
   Button,
 } from "./SingleProduct.styles";
+import { CssOutlined } from "@mui/icons-material";
 
 const SingleProduct = () => {
   const location = useLocation();
@@ -67,9 +72,14 @@ const SingleProduct = () => {
   // const handleClick = () => {
   //   dispatch(addProduct({ ...product, quantity, color, size }));
   // };
+  // console.log(product);
+  const handleAddToCart = (product) => {
+    // dispatch(addCartItem({ ...product, quantity }));
+    dispatch(increaseCartItem(product));
+  };
 
-  const handleClick = () => {
-    dispatch(addCartItem({ ...product, quantity }));
+  const handleClear = () => {
+    dispatch(clearCartItem());
   };
 
   return (
@@ -114,7 +124,10 @@ const SingleProduct = () => {
                 style={{ cursor: "pointer" }}
               />
             </AmountContainer> */}
-            <Button onClick={handleClick}>Add to Cart</Button>
+            <Button onClick={() => handleAddToCart(product)}>
+              Add to Cart
+            </Button>
+            <Button onClick={handleClear}>clear all</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>
