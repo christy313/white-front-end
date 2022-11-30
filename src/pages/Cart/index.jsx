@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import StripeCheckout from "react-stripe-checkout";
+// import StripeCheckout from "react-stripe-checkout";
 
 import { deleteCartItem, clearCartItem } from "../../redux/cartRedux";
 
@@ -49,39 +49,39 @@ const currentUser = user && JSON.parse(user).currentUser;
 const TOKEN = currentUser?.accessToken;
 
 const Cart = () => {
-  const [stripeToken, setStripeToken] = useState(null);
+  // const [stripeToken, setStripeToken] = useState(null);
   const [quantity, setQuantity] = useState(1);
 
   const cart = useSelector((state) => state.cart);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const onToken = (token) => {
-    setStripeToken(token);
-  };
+  // const onToken = (token) => {
+  //   setStripeToken(token);
+  // };
 
-  useEffect(() => {
-    const makeRequest = async () => {
-      try {
-        const res = await fetch("http://localhost:8080/api/checkout/payment", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            // Authorization: `Bearer ${TOKEN}`,
-          },
-          body: JSON.stringify({
-            tokenId: stripeToken.id,
-            amount: cart.total * 100,
-          }),
-        });
-        const data = await res.json();
-        navigate("/success", { state: data });
-      } catch (error) {
-        console.log(error.message);
-      }
-    };
-    stripeToken && makeRequest();
-  }, [stripeToken, navigate, cart.total]);
+  // useEffect(() => {
+  //   const makeRequest = async () => {
+  //     try {
+  //       const res = await fetch("http://localhost:8080/api/checkout/payment", {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //           // Authorization: `Bearer ${TOKEN}`,
+  //         },
+  //         body: JSON.stringify({
+  //           tokenId: stripeToken.id,
+  //           amount: cart.total * 100,
+  //         }),
+  //       });
+  //       const data = await res.json();
+  //       navigate("/success", { state: data });
+  //     } catch (error) {
+  //       console.log(error.message);
+  //     }
+  //   };
+  //   stripeToken && makeRequest();
+  // }, [stripeToken, navigate, cart.total]);
 
   const handleQuantity = (type) => {
     if (type === "dec") {
@@ -203,7 +203,7 @@ const Cart = () => {
               <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
             </SummaryItem>
 
-            <StripeCheckout
+            {/* <StripeCheckout
               name="gap"
               image="https://avatars.githubusercontent.com/u/50518097?v=4"
               billingAddress
@@ -214,9 +214,9 @@ const Cart = () => {
               stripeKey={stripeKey}
             >
               <Button>Checkout Now</Button>
-            </StripeCheckout>
+            </StripeCheckout> */}
+            <Button onClick={handleCheckout}>Checkout</Button>
             <Button onClick={handleClear}>clear all</Button>
-            <button onClick={handleCheckout}>checkout stripe</button>
           </Summary>
         </Bottom>
       </Wrapper>

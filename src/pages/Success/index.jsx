@@ -7,7 +7,7 @@ const Success = () => {
   const location = useLocation();
   // temporary use state.id as order id
   const orderId = location.state.id;
-  console.log(location);
+  // console.log(location);
   return (
     <Container>
       <Wrapper>
