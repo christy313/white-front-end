@@ -3,7 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 // import StripeCheckout from "react-stripe-checkout";
 
-import { deleteCartItem, clearCartItem } from "../../redux/cartRedux";
+import {
+  deleteCartItem,
+  clearCartItem,
+  increaseCartItem,
+  decreaseCartItem,
+} from "../../redux/cartRedux";
 
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
@@ -122,6 +127,14 @@ const Cart = () => {
       });
   };
 
+  const handleIncreaseItem = () => {
+    dispatch(increaseCartItem());
+  };
+
+  const handleDecreaseItem = () => {
+    dispatch(decreaseCartItem());
+  };
+
   return (
     <Container>
       <Navbar />
@@ -164,12 +177,12 @@ const Cart = () => {
                     <PriceDetail>
                       <ProductAmountContainer>
                         <RemoveIcon
-                          onClick={() => handleQuantity("dec")}
+                          onClick={handleDecreaseItem}
                           style={{ cursor: "pointer" }}
                         />
                         <ProductAmount>{product.quantity}</ProductAmount>
                         <AddIcon
-                          onClick={() => handleQuantity("inc")}
+                          onClick={handleIncreaseItem}
                           style={{ cursor: "pointer" }}
                         />
                       </ProductAmountContainer>
