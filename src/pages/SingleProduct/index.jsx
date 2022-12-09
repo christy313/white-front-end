@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   addCartItem,
   increaseCartItem,
@@ -7,12 +7,9 @@ import {
 } from "../../redux/cartRedux";
 import { useLocation } from "react-router-dom";
 import Navbar from "../../components/Navbar";
-// import Notice from "../../components/Notice";
-// import Newsletter from "../../components/Newsletter";
 import Footer from "../../components/Footer";
-
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
+// import AddIcon from "@mui/icons-material/Add";
+// import RemoveIcon from "@mui/icons-material/Remove";
 
 import {
   Container,
@@ -34,7 +31,6 @@ import {
   Amount,
   Button,
 } from "./SingleProduct.styles";
-import { CssOutlined } from "@mui/icons-material";
 
 const SingleProduct = () => {
   const location = useLocation();

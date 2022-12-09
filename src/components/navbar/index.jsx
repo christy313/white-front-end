@@ -23,6 +23,8 @@ const Navbar = () => {
   const quantity = useSelector((state) => state.cart.quantity);
   const user = useSelector((state) => state.user.currentUser);
 
+  // const quantity = useSelector((state) => state.cart.getCartIconTotal());
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleLogout = () => {
