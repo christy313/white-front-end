@@ -8,12 +8,6 @@ const cartSlice = createSlice({
     total: 0,
   },
   reducers: {
-    // addCartItem: (state, action) => {
-    //   state.quantity += 1;
-    //   state.products.push(action.payload);
-    //   state.total += action.payload.price * action.payload.quantity;
-    // },
-
     increaseCartItem: (state, action) => {
       const existingIndex = state.products.findIndex(
         (item) => item._id === action.payload._id
@@ -41,21 +35,18 @@ const cartSlice = createSlice({
 
     decreaseCartItem: (state, action) => {
       const existingIndex = state.products.findIndex(
-        (item) => item.id === action.payload.id
+        (item) => item._id === action.payload._id
       );
 
-      if (existingIndex >= 0) {
-        state.products[existingIndex] = {
-          ...state.products[existingIndex],
-          quantity: state.products[existingIndex].quantity - 1,
-        };
+      if (state.products[existingIndex].quantity > 1) {
+        state.products[existingIndex].quantity -= 1;
         state.quantity -= 1;
-      } else {
-        state.products.push({
-          ...action.payload,
-          quantity: 1,
-        });
+      } else if (state.products[existingIndex].quantity === 1) {
+        const leftProducts = state.products.filter(
+          (product) => product._id !== action.payload._id
+        );
         state.quantity -= 1;
+        state.products = leftProducts;
       }
 
       state.total = state.products.reduce((total, product) => {
@@ -87,11 +78,9 @@ const cartSlice = createSlice({
 });
 
 export const {
-  addCartItem,
   deleteCartItem,
   clearCartItem,
   increaseCartItem,
   decreaseCartItem,
-  getCartIconTotal,
 } = cartSlice.actions;
 export default cartSlice.reducer;

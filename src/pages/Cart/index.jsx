@@ -127,12 +127,12 @@ const Cart = () => {
       });
   };
 
-  const handleIncreaseItem = () => {
-    dispatch(increaseCartItem());
+  const handleIncreaseItem = (product) => {
+    dispatch(increaseCartItem(product));
   };
 
-  const handleDecreaseItem = () => {
-    dispatch(decreaseCartItem());
+  const handleDecreaseItem = (product) => {
+    dispatch(decreaseCartItem(product));
   };
 
   return (
@@ -177,12 +177,12 @@ const Cart = () => {
                     <PriceDetail>
                       <ProductAmountContainer>
                         <RemoveIcon
-                          onClick={handleDecreaseItem}
+                          onClick={() => handleDecreaseItem(product)}
                           style={{ cursor: "pointer" }}
                         />
                         <ProductAmount>{product.quantity}</ProductAmount>
                         <AddIcon
-                          onClick={handleIncreaseItem}
+                          onClick={() => handleIncreaseItem(product)}
                           style={{ cursor: "pointer" }}
                         />
                       </ProductAmountContainer>
