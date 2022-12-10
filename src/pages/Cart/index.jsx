@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import {
   deleteCartItem,
-  clearCartItem,
+  // clearCartItem,
   increaseCartItem,
   decreaseCartItem,
 } from "../../redux/cartRedux";
@@ -56,9 +56,9 @@ const Cart = () => {
     dispatch(deleteCartItem(id));
   };
 
-  const handleClear = () => {
-    dispatch(clearCartItem());
-  };
+  // const handleClear = () => {
+  //   dispatch(clearCartItem());
+  // };
 
   const handleCheckout = () => {
     fetch("http://localhost:8080/api/checkout/create-checkout-session", {
@@ -145,7 +145,7 @@ const Cart = () => {
             </SummaryItem>
 
             <Button onClick={handleCheckout}>Checkout</Button>
-            <Button onClick={handleClear}>clear all</Button>
+            {/* <Button onClick={handleClear}>Clear all</Button> */}
           </Summary>
         </Bottom>
       </Wrapper>

@@ -27,7 +27,7 @@ export const Summary = styled.div`
   flex: 1;
   border-radius: 20px;
   padding: 40px;
-  height: 450px;
+  height: 400px;
   max-width: 360px;
   position: sticky;
   top: 80px;
