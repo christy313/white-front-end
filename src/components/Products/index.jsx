@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Product from "../Product/index";
 import { Container, Wrapper } from "./Products.styles";
-// import { popularProducts } from "../../data";
 
 const Products = ({ category, filters, sort }) => {
   const [products, setProducts] = useState([]);

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { increaseCartItem } from "../../redux/cartRedux";
 import { useLocation } from "react-router-dom";
 import Navbar from "../../components/Navbar";
