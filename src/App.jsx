@@ -14,6 +14,7 @@ import Cart from "../src/pages/Cart";
 import Login from "../src/pages/Login";
 import Register from "../src/pages/Register";
 import Success from "../src/pages/Success";
+import Cancel from "../src/pages/Cancel";
 // import Logout from "../src/pages/Logout";
 
 const App = () => {
@@ -28,6 +29,8 @@ const App = () => {
         <Route path="/product/:id" element={<SingleProduct />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/success" element={<Success />} />
+        <Route path="/cancel" element={<Cancel />} />
+
         {/* <Route path="/logout" element={<Login />} /> */}
 
         <Route

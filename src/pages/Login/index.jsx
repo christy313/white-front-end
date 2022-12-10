@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../../redux/apiCalls";
+import { loginUser } from "../../redux/apiCalls";
 import Navbar from "../../components/Navbar/index";
 
 import {
@@ -27,7 +27,7 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    login(dispatch, { username, password });
+    loginUser(dispatch, { username, password });
     if (currentUser) navigate("/");
   };
 

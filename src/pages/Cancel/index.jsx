@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router";
-import { Container, Wrapper, OrderNotice, Button } from "./Success.styles";
+// import { useLocation } from "react-router";
+import { Container, Wrapper, OrderNotice, Button } from "./Cancel.styles";
 
-const Success = () => {
+const Cancel = () => {
   // const location = useLocation();
   // temporary use state.id as order id
   // const orderId = location.state.id;
@@ -11,7 +11,9 @@ const Success = () => {
   return (
     <Container>
       <Wrapper>
-        <OrderNotice>Order has been created successfully.</OrderNotice>
+        <OrderNotice>
+          Sorry to see you cancel the order, wanna go back to homepage?
+        </OrderNotice>
         <Link to="/">
           <Button>Homepage</Button>
         </Link>
@@ -20,4 +22,4 @@ const Success = () => {
   );
 };
 
-export default Success;
+export default Cancel;
