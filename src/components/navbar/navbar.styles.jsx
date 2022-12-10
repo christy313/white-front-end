@@ -43,27 +43,6 @@ export const Left = styled.div`
   z-index: 1;
 `;
 
-export const SearchContainer = styled.div`
-  border: 0.5px solid lightgray;
-  display: flex;
-  align-items: center;
-  margin-left: 24px;
-  padding: 3px;
-`;
-
-export const Input = styled.input`
-  border: none;
-  outline: none;
-
-  ${mobile({ width: "50px" })}
-`;
-
-export const Center = styled.div`
-  flex: 1;
-  /* display: flex; */
-  align-items: center;
-`;
-
 export const Logo = styled.div`
   font-weight: bold;
 

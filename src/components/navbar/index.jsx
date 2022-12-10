@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logoutUser } from "../../redux/apiCalls";
 
-// import SearchIcon from "@mui/icons-material/Search";
 import Badge from "@mui/material/Badge";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import {
@@ -11,9 +10,6 @@ import {
   Wrapper,
   Left,
   Logo,
-  Center,
-  SearchContainer,
-  Input,
   Right,
   MenuItem,
   StyledLink,
@@ -22,9 +18,6 @@ import {
 const Navbar = () => {
   const quantity = useSelector((state) => state.cart.quantity);
   const user = useSelector((state) => state.user.currentUser);
-
-  // const quantity = useSelector((state) => state.cart.getCartIconTotal());
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleLogout = () => {
@@ -43,14 +36,7 @@ const Navbar = () => {
           <StyledLink to="/products/coat">Men</StyledLink>
           <StyledLink to="/products/jeans">Kids</StyledLink>
         </Left>
-        {/* <Center>
-          <SearchContainer>
-            <Input placeholder="Search" />
-            <SearchIcon
-              style={{ color: "gray", fontSize: "16", textAlign: "flex-end" }}
-            />
-          </SearchContainer>
-        </Center> */}
+
         <Right>
           {user ? (
             <StyledLink to="/" onClick={handleLogout}>

@@ -1,12 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
-
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
 } from "react-router-dom";
+
 import Home from "../src/pages/Home";
 import ProductList from "../src/pages/ProductsList";
 import SingleProduct from "../src/pages/SingleProduct";
@@ -15,10 +15,8 @@ import Login from "../src/pages/Login";
 import Register from "../src/pages/Register";
 import Success from "../src/pages/Success";
 import Cancel from "../src/pages/Cancel";
-// import Logout from "../src/pages/Logout";
 
 const App = () => {
-  // const user = null;
   const user = useSelector((state) => state.user.currentUser);
 
   return (
@@ -30,8 +28,6 @@ const App = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/success" element={<Success />} />
         <Route path="/cancel" element={<Cancel />} />
-
-        {/* <Route path="/logout" element={<Login />} /> */}
 
         <Route
           path="/login"

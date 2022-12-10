@@ -38,14 +38,6 @@ export const Container = styled.div`
   }
 `;
 
-export const Circle = styled.div`
-  /* width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-color: white;
-  position: absolute; */
-`;
-
 export const Image = styled.img`
   border-radius: 20px;
   height: 100%;
