@@ -15,14 +15,12 @@ import {
   Desc,
   Price,
   FilterContainer,
-  Filter,
-  FilterTitle,
-  FilterColor,
-  FilterSize,
-  FilterSizeOption,
+  // Filter,
+  // FilterTitle,
+  // FilterColor,
+  // FilterSize,
+  // FilterSizeOption,
   AddContainer,
-  AmountContainer,
-  Amount,
   Button,
 } from "./SingleProduct.styles";
 
@@ -85,17 +83,6 @@ const SingleProduct = () => {
           </FilterContainer>
 
           <AddContainer>
-            {/* <AmountContainer>
-              <RemoveIcon
-                onClick={() => handleQuantity("dec")}
-                style={{ cursor: "pointer" }}
-              />
-              <Amount>{quantity}</Amount>
-              <AddIcon
-                onClick={() => handleQuantity("inc")}
-                style={{ cursor: "pointer" }}
-              />
-            </AmountContainer> */}
             <Button onClick={() => handleAddToCart(product)}>
               Add to Cart
             </Button>

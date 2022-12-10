@@ -1,18 +1,14 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import { useNavigate } from "react-router-dom";
 import { RegisterUser } from "../../redux/apiCalls";
-
 import Navbar from "../../components/Navbar/index";
-
 import {
   Container,
   Wrapper,
   Title,
   Form,
   Input,
-  // Agreement,
   ButtonWrapper,
   Button,
   StyledLink,

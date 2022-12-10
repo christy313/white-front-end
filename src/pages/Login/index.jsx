@@ -10,7 +10,6 @@ import {
   Title,
   Form,
   Input,
-  // Agreement,
   Button,
   ButtonWrapper,
   StyledLink,

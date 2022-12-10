@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "../../components/Navbar/index";
 import Products from "../../components/Products/index";
-// import Newsletter from "../../components/Newsletter/index";
 import Footer from "../../components/Footer/index";
 
 import {
@@ -31,7 +30,6 @@ const ProductsList = () => {
 
   return (
     <Container>
-      {/* <Notice /> */}
       <Navbar />
       <Title>{category}</Title>
       <FilterContainer>
@@ -67,7 +65,6 @@ const ProductsList = () => {
       </FilterContainer>
 
       <Products category={category} filters={filters} sort={sort} />
-      {/* <Newsletter /> */}
       <Footer />
     </Container>
   );

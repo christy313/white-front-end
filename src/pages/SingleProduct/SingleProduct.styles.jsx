@@ -9,7 +9,6 @@ export const Wrapper = styled.div`
 
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
 
   max-width: 1200px;
   margin-left: auto;
@@ -34,7 +33,6 @@ export const Image = styled.img`
 `;
 
 export const InfoContainer = styled.div`
-  /* flex: 1; */
   padding: 0px 50px;
   ${mobile({ padding: "10px" })}
 `;
@@ -96,23 +94,6 @@ export const AddContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   ${mobile({ width: "100%" })}
-`;
-
-export const AmountContainer = styled.div`
-  display: flex;
-  align-items: center;
-  font-weight: 700;
-`;
-
-export const Amount = styled.span`
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 1px solid teal;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0px 5px;
 `;
 
 export const Button = styled.button`
