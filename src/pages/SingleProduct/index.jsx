@@ -1,15 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  addCartItem,
-  increaseCartItem,
-  clearCartItem,
-} from "../../redux/cartRedux";
+import { increaseCartItem } from "../../redux/cartRedux";
 import { useLocation } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-// import AddIcon from "@mui/icons-material/Add";
-// import RemoveIcon from "@mui/icons-material/Remove";
 
 import {
   Container,
@@ -36,9 +30,9 @@ const SingleProduct = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
   const [product, setProduct] = useState({});
-  const [quantity, setQuantity] = useState(1);
-  const [color, setColor] = useState("");
-  const [size, setSize] = useState("");
+  // const [quantity, setQuantity] = useState(1);
+  // const [color, setColor] = useState("");
+  // const [size, setSize] = useState("");
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -57,31 +51,13 @@ const SingleProduct = () => {
     fetchProducts();
   }, [id]);
 
-  // const handleQuantity = (type) => {
-  //   if (type === "dec") {
-  //     quantity > 1 && setQuantity(quantity - 1);
-  //   } else {
-  //     setQuantity(quantity + 1);
-  //   }
-  // };
-
-  // const handleClick = () => {
-  //   dispatch(addProduct({ ...product, quantity, color, size }));
-  // };
-  // console.log(product);
   const handleAddToCart = (product) => {
-    // dispatch(addCartItem({ ...product, quantity }));
     dispatch(increaseCartItem(product));
-  };
-
-  const handleClear = () => {
-    dispatch(clearCartItem());
   };
 
   return (
     <Container>
       <Navbar />
-      {/* <Notice /> */}
       <Wrapper>
         <ImgContainer>
           <Image src={product.img} />
@@ -123,11 +99,9 @@ const SingleProduct = () => {
             <Button onClick={() => handleAddToCart(product)}>
               Add to Cart
             </Button>
-            <Button onClick={handleClear}>clear all</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>
-      {/* <Newsletter /> */}
       <Footer />
     </Container>
   );
