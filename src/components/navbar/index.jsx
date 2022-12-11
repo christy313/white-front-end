@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logoutUser } from "../../redux/apiCalls";
 import Badge from "@mui/material/Badge";
+import MenuIcon from "@mui/icons-material/Menu";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import {
   Container,
@@ -27,10 +28,10 @@ const Navbar = () => {
   return (
     <Container>
       <Wrapper>
+        <StyledLink to="/">
+          <Logo src="/logo/white.png" alt=""></Logo>
+        </StyledLink>
         <Left>
-          <StyledLink to="/">
-            <Logo src="/logo/white.png" alt=""></Logo>
-          </StyledLink>
           <StyledLink to="/products/shoes">Shoes</StyledLink>
           <StyledLink to="/products/living">Living</StyledLink>
           <StyledLink to="/products/kitchen">Kitchen</StyledLink>
@@ -54,7 +55,7 @@ const Navbar = () => {
           )}
 
           <StyledLink to="/cart">
-            <MenuItem>
+            <MenuItem className="cart">
               <Badge badgeContent={quantity} color="primary">
                 <ShoppingCartOutlinedIcon />
               </Badge>

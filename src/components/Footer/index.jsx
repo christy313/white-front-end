@@ -18,13 +18,13 @@ const Footer = () => (
       <Title>Copyright © White Co., Ltd. All rights reserved.</Title>
       <SocialContainer>
         <SocialIcon>
-          <FacebookOutlinedIcon fontSize="large" />
+          <FacebookOutlinedIcon fontSize="medium" />
         </SocialIcon>
         <SocialIcon>
-          <InstagramIcon fontSize="large" />
+          <InstagramIcon fontSize="medium" />
         </SocialIcon>
         <SocialIcon>
-          <TwitterIcon fontSize="large" />
+          <TwitterIcon fontSize="medium" />
         </SocialIcon>
       </SocialContainer>
     </Wrapper>

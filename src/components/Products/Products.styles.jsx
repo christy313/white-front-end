@@ -2,10 +2,9 @@ import styled from "styled-components";
 import { mobile } from "../../responsive";
 
 export const Container = styled.div`
-  padding: 20px;
+  margin: 15px;
   margin-bottom: 100px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
 `;
 

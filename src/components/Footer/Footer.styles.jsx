@@ -18,12 +18,13 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  ${mobile({ flexDirection: "column", textAlign: "center", fontSize: "12px" })}
+  ${mobile({ flexDirection: "column", textAlign: "center" })}
 `;
 
 export const Title = styled.div`
   font-size: 20px;
   font-weight: 500;
+  ${mobile({ fontSize: "12px" })}
 `;
 
 export const SocialContainer = styled.div`

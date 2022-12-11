@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { mobile } from "../../responsive";
 
 export const Container = styled.div`
-  height: 8vh;
+  height: auto;
   font-size: 20px;
   font-weight: bold;
 
@@ -14,7 +14,7 @@ export const Container = styled.div`
   background-color: #f4f4f4;
   left: 0;
 
-  ${mobile({ height: "50px" })}
+  ${mobile({ fontSize: "14px" })}
 `;
 
 export const Wrapper = styled.div`
@@ -25,8 +25,6 @@ export const Wrapper = styled.div`
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-
-  ${mobile({ padding: "10px 0px" })}
 `;
 
 export const Left = styled.div`
@@ -39,11 +37,15 @@ export const Left = styled.div`
   display: flex;
   height: 100%;
   z-index: 1;
+
+  ${mobile({
+    display: "none",
+  })}
 `;
 
 export const Logo = styled.img`
   height: 60px;
-  ${mobile({ fontSize: "24px" })};
+  ${mobile({ height: "48px" })};
 `;
 
 export const Right = styled.div`
@@ -51,8 +53,6 @@ export const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-
-  ${mobile({ flex: 2, justifyContent: "center" })}
 `;
 
 export const MenuItem = styled.div`
@@ -61,8 +61,6 @@ export const MenuItem = styled.div`
     color: teal;
     transform: scale(1.05);
   }
-
-  ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 
 export const StyledLink = styled(Link)`
