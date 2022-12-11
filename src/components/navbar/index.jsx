@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logoutUser } from "../../redux/apiCalls";
-
 import Badge from "@mui/material/Badge";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import {
@@ -30,11 +29,11 @@ const Navbar = () => {
       <Wrapper>
         <Left>
           <StyledLink to="/">
-            <Logo>Gap</Logo>
+            <Logo src="/logo/white.png" alt=""></Logo>
           </StyledLink>
-          <StyledLink to="/products/women">Women</StyledLink>
-          <StyledLink to="/products/coat">Men</StyledLink>
-          <StyledLink to="/products/jeans">Kids</StyledLink>
+          <StyledLink to="/products/shoes">Shoes</StyledLink>
+          <StyledLink to="/products/living">Living</StyledLink>
+          <StyledLink to="/products/kitchen">Kitchen</StyledLink>
         </Left>
 
         <Right>

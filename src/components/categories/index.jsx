@@ -2,7 +2,7 @@ import React from "react";
 import CategoryItem from "../CategoryItem";
 import { Container, Wrapper } from "./Categories.styles";
 
-import { categories } from "../../data";
+import { categories } from "../../data/data";
 
 const Categories = () => (
   <Container>

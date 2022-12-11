@@ -3,9 +3,7 @@ import styled from "styled-components";
 import { mobile } from "../../responsive";
 
 export const Container = styled.div`
-  height: 60px;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-
+  height: 8vh;
   font-size: 20px;
   font-weight: bold;
 
@@ -13,7 +11,7 @@ export const Container = styled.div`
   top: 0;
   width: 100%;
   z-index: 12;
-  background-color: white;
+  background-color: #f4f4f4;
   left: 0;
 
   ${mobile({ height: "50px" })}
@@ -43,10 +41,9 @@ export const Left = styled.div`
   z-index: 1;
 `;
 
-export const Logo = styled.div`
-  font-weight: bold;
-
-  ${mobile({ fontSize: "24px" })}
+export const Logo = styled.img`
+  height: 60px;
+  ${mobile({ fontSize: "24px" })};
 `;
 
 export const Right = styled.div`
@@ -74,7 +71,7 @@ export const StyledLink = styled(Link)`
 
   position: relative;
   color: #000;
-  padding: 1rem 0.75rem;
+  padding: 0.75rem;
   display: inline-block;
 
   &:hover {

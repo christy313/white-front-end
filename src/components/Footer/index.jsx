@@ -15,7 +15,7 @@ import {
 const Footer = () => (
   <Container>
     <Wrapper>
-      <Title>Copyright © Gap Co., Ltd. All rights reserved.</Title>
+      <Title>Copyright © White Co., Ltd. All rights reserved.</Title>
       <SocialContainer>
         <SocialIcon>
           <FacebookOutlinedIcon fontSize="large" />

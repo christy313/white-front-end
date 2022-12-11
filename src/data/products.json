@@ -1,0 +1,102 @@
+[
+  {
+    "title": "White Teapot",
+    "desc": "A pure white teapot with elegant wood handle, have a cup of tea today",
+    "img": "https://github.com/christy313/images/blob/main/gap/kitchen/kitchen1.jpg?raw=true",
+    "categories": ["kitchen"],
+    "size":["S", "M"],
+    "price": 139,
+    "createdAt": "2022-12-11T02:22:41.530Z"
+  },
+  {
+    "title": "Ceramic Cup",
+    "desc": "Bird and cat on the ceramic cup",
+    "img": "https://github.com/christy313/images/blob/main/gap/kitchen/kitchen2.jpg?raw=true",
+    "categories": ["kitchen"],
+    "size":["M", "L"],
+    "price": 38,
+    "createdAt": "2022-11-11T02:22:41.530Z"
+  },
+  {
+    "title": "Apple glass",
+    "desc": "Apple glass 500ml or 750ml, have some water everyday",
+    "img": "https://github.com/christy313/images/blob/main/gap/kitchen/kitchen3.jpg?raw=true",
+    "categories": ["kitchen"],
+    "size":["M", "L"],
+    "price": 29,
+    "createdAt": "2022-10-11T02:22:41.530Z"
+  },
+
+  {
+    "title": "Yes, we are coin pouches",
+    "desc": "Oyster mushroom, green onion, garlic coin pouches could carry all of your coins",
+    "img": "https://github.com/christy313/images/blob/main/gap/living/living1.jpg?raw=true",
+    "categories": ["living"],
+    "size":["S", "M", "L"],
+    "price": 59,
+    "createdAt": "2022-09-11T02:22:41.530Z"
+  },
+  {
+    "title": "2023 Calendar",
+    "desc": "Wood 2023 calendar and monthly quote, printed with soy-based inks on FSC certified paper",
+    "img": "https://github.com/christy313/images/blob/main/gap/living/living2.jpg?raw=true",
+    "categories": ["living"],
+    "price": 129,
+    "createdAt": "2022-08-11T02:22:41.530Z"
+  },
+  {
+    "title": "White Camping lamp",
+    "desc": "White Camping lamp with a three-way incandescent bulb and handle",
+    "img": "https://github.com/christy313/images/blob/main/gap/living/living3.jpg?raw=true",
+    "categories": ["living"],
+    "size":["L", "XL"],
+    "price": 239,
+    "createdAt": "2022-08-22T02:22:41.530Z"
+  },
+  {
+    "title": "Stainless steel fan",
+    "desc": "Stainless steel fan, 3 speed, makes it really cool",
+    "img": "https://github.com/christy313/images/blob/main/gap/living/living4.jpg?raw=true",
+    "categories": ["living"],
+    "size":["M", "L", "XL"],
+    "price": 128,
+    "createdAt": "2022-09-13T02:22:41.530Z"
+  },
+  {
+    "title": "White Calculator",
+    "desc": "White Calculator with rounded buttons and big screen",
+    "img": "https://github.com/christy313/images/blob/main/gap/living/living5.jpg?raw=true",
+    "categories": ["living"],
+    "price": 79,
+    "createdAt": "2022-09-19T02:22:41.530Z"
+  },
+
+  {
+    "title": "White kid woven sandals",
+    "desc": "White leather kid woven sandals, zipper shoes for kids",
+    "img": "https://github.com/christy313/images/blob/main/gap/shoes/shoes1.jpg?raw=true",
+    "categories": ["shoes"],
+    "size":["XS", "S", "M", "L", "XL"],
+    "price": 179,
+    "createdAt": "2022-09-29T02:22:41.530Z"
+  },
+  {
+    "title": "Dog kid rain boots",
+    "desc": "Dog kid rain boots, cozy on the inside and waterproof on the outside",
+    "img": "https://github.com/christy313/images/blob/main/gap/shoes/shoes2.jpg?raw=true",
+    "categories": ["shoes"],
+    "size":["XS", "S", "M", "L", "XL"],
+    "price": 188,
+    "createdAt": "2022-09-17T02:22:41.530Z"
+  },
+  {
+    "title": "White kid slipper",
+    "desc": "White kid slipper, slip-resistant",
+    "img": "https://github.com/christy313/images/blob/main/gap/shoes/shoes3.jpg?raw=true",
+    "categories": ["shoes"],
+    "size":["XS", "S", "M", "L", "XL"],
+    "price": 38,
+    "createdAt": "2022-09-10T02:22:41.530Z"
+  }
+]
+
