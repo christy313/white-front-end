@@ -10,7 +10,7 @@ export const Container = styled.div`
       rgba(255, 255, 255, 0.5)
     ),
     url("https://images.ctfassets.net/5gvckmvm9289/3BlDoZxSSjqAvv1jBJP7TH/65f9a95484117730ace42abf64e89572/Noissue-x-Creatsy-Tote-Bag-Mockup-Bundle-_4_-2.png");
-  background-size: auto;
+  background-size: contain;
   background-repeat: no-repeat;
 
   display: flex;

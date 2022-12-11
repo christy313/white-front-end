@@ -26,7 +26,8 @@ export const FilterText = styled.span`
   font-size: 20px;
   font-weight: 600;
   margin-right: 20px;
-  ${mobile({ marginRight: "0px" })}
+
+  ${mobile({ marginRight: "0px", fontSize: "12px" })}
 `;
 
 export const Select = styled.select`
@@ -36,7 +37,7 @@ export const Select = styled.select`
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 
-  ${mobile({ margin: "10px 0px" })}
+  ${mobile({ margin: "10px 0px", padding: "5px" })}
 `;
 
 export const Option = styled.option``;

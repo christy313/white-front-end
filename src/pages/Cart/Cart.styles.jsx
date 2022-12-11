@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mobile } from "../../responsive";
+import { mobile, tablet } from "../../responsive";
 
 export const Container = styled.div``;
 
@@ -15,7 +15,8 @@ export const Bottom = styled.div`
   max-width: 1200px;
   margin: 0 auto;
 
-  ${mobile({ flexDirection: "column" })}
+  ${mobile({ flexDirection: "column", marginTop: "20px" })}
+  ${tablet({ flexDirection: "column" })}
 `;
 
 export const Info = styled.div`
@@ -28,28 +29,38 @@ export const Summary = styled.div`
   border-radius: 20px;
   padding: 40px;
   height: 400px;
-  max-width: 360px;
+  min-width: 360px;
   position: sticky;
   top: 120px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   margin-top: 100px;
+
+  ${mobile({
+    margin: "20px",
+    marginBottom: "100px",
+    minWidth: "280px",
+    fontSize: "12px",
+  })}
+  ${tablet({ margin: "20px 0", maxWidth: "360px", marginBottom: "100px" })}
 `;
 
 export const Product = styled.div`
   display: flex;
   justify-content: space-between;
-  ${mobile({ flexDirection: "column" })}
+
+  ${mobile({ flexDirection: "column", fontSize: "12px" })}
 `;
 
 export const ProductDetail = styled.div`
   flex: 2;
   display: flex;
+  ${mobile({ display: "block" })}
 `;
 
 export const Image = styled.img`
-  width: 400px;
+  width: 320px;
   height: 80%;
   object-fit: cover;
   /* margin-bottom: 20px; */
@@ -63,9 +74,10 @@ export const PriceDetail = styled.div`
   flex: 1;
   display: flex;
   margin: 20px;
-  /* align-items: center; */
-  /* justify-content: center; */
-  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-between; */
+  /* flex-direction: column; */
+  /* ${mobile({ display: "block" })} */
 `;
 
 export const Details = styled.div`
@@ -73,6 +85,7 @@ export const Details = styled.div`
   /* display: flex; */
   /* flex-direction: column; */
   /* justify-content: space-around; */
+  ${mobile({ display: "block" })}
 `;
 
 export const ProductName = styled.div`
@@ -98,6 +111,7 @@ export const ProductAmountContainer = styled.div`
   display: flex;
   align-items: center;
   margin: 10px 0;
+  ${mobile({ margin: "0" })}
 `;
 
 export const ProductAmount = styled.div`
@@ -117,7 +131,9 @@ export const ProductAmount = styled.div`
 export const ProductPrice = styled.div`
   font-size: 30px;
   font-weight: 200;
-  ${mobile({ margin: "20px" })}
+  margin-left: 30px;
+
+  ${mobile({ fontSize: "24px" })}
 `;
 
 export const SummaryTitle = styled.h1`
@@ -155,4 +171,6 @@ export const RemoveProduct = styled.button`
   margin: 20px;
   cursor: pointer;
   width: 80px;
+
+  ${mobile({ margin: "5px 15px" })}
 `;
