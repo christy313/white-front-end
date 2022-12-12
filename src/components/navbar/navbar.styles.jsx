@@ -45,6 +45,7 @@ export const Left = styled.div`
 
 export const Logo = styled.img`
   height: 60px;
+
   ${mobile({ height: "48px" })};
 `;
 

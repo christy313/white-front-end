@@ -19,6 +19,7 @@ export const Title = styled.h1`
 
 export const Filter = styled.div`
   margin: 20px;
+
   ${mobile({ width: "0px 20px", display: "flex", flexDirection: "column" })}
 `;
 

@@ -24,11 +24,13 @@ export const Wrapper = styled.div`
 export const Title = styled.div`
   font-size: 20px;
   font-weight: 500;
+
   ${mobile({ fontSize: "12px" })}
 `;
 
 export const SocialContainer = styled.div`
   display: flex;
+
   ${mobile({
     flexDirection: "row",
     marginTop: "10px",

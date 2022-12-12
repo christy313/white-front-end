@@ -60,10 +60,9 @@ export const ProductDetail = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 320px;
+  width: 300px;
   height: 80%;
   object-fit: cover;
-  /* margin-bottom: 20px; */
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -75,16 +74,11 @@ export const PriceDetail = styled.div`
   display: flex;
   margin: 20px;
   align-items: center;
-  /* justify-content: space-between; */
-  /* flex-direction: column; */
-  /* ${mobile({ display: "block" })} */
 `;
 
 export const Details = styled.div`
   padding: 20px;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: space-around; */
+
   ${mobile({ display: "block" })}
 `;
 
@@ -111,6 +105,7 @@ export const ProductAmountContainer = styled.div`
   display: flex;
   align-items: center;
   margin: 10px 0;
+
   ${mobile({ margin: "0" })}
 `;
 

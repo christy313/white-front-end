@@ -15,8 +15,9 @@ export const Wrapper = styled.div`
 `;
 
 export const OrderNotice = styled.p`
-  margin-bottom: 20px;
+  margin: 20px;
   font-size: 18px;
+  text-align: center;
 `;
 
 export const Button = styled.button`

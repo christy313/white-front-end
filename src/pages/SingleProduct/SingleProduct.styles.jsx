@@ -34,6 +34,7 @@ export const Image = styled.img`
 
 export const InfoContainer = styled.div`
   padding: 0px 50px;
+
   ${mobile({ padding: "10px" })}
 `;
 
@@ -55,6 +56,7 @@ export const FilterContainer = styled.div`
   margin: 30px 0px;
   display: flex;
   justify-content: space-between;
+
   ${mobile({ width: "100%" })}
 `;
 
@@ -81,7 +83,6 @@ export const FilterSize = styled.select`
   margin-left: 10px;
   padding: 5px;
   border-radius: 20px;
-
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 `;
@@ -93,6 +94,7 @@ export const AddContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   ${mobile({ width: "100%" })}
 `;
 
