@@ -37,7 +37,7 @@ const SingleProduct = () => {
     const fetchProducts = async () => {
       try {
         const res = await fetch(
-          `http://localhost:8080/api/products/find/${id}`
+          `https://allwhite.onrender.com/api/products/find/${id}`
         );
         const productData = await res.json();
 

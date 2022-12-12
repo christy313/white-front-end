@@ -12,7 +12,7 @@ export const RegisterUser = async (dispatch, user) => {
   dispatch(registerStart());
 
   try {
-    const res = await fetch("http://localhost:8080/api/auth/register", {
+    const res = await fetch("https://allwhite.onrender.com/api/auth/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,7 +35,7 @@ export const loginUser = async (dispatch, user) => {
   dispatch(loginStart());
 
   try {
-    const res = await fetch("http://localhost:8080/api/auth/login", {
+    const res = await fetch("https://allwhite.onrender.com/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -61,15 +61,18 @@ const Cart = () => {
   // };
 
   const handleCheckout = () => {
-    fetch("http://localhost:8080/api/checkout/create-checkout-session", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        amount: cart.total * 100,
-      }),
-    })
+    fetch(
+      "https://allwhite.onrender.com/api/checkout/create-checkout-session",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          amount: cart.total * 100,
+        }),
+      }
+    )
       .then((res) => {
         if (res.ok) return res.json();
         return res.json().then((json) => Promise.reject(json));

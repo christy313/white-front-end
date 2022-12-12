@@ -11,8 +11,8 @@ const Products = ({ category, filters, sort }) => {
       try {
         const res = await fetch(
           category
-            ? `http://localhost:8080/api/products?category=${category}`
-            : `http://localhost:8080/api/products`
+            ? `https://allwhite.onrender.com/api/products?category=${category}`
+            : `https://allwhite.onrender.com/api/products`
         );
 
         const productsData = await res.json();
