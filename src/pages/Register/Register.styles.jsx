@@ -21,6 +21,7 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   max-width: 320px;
   padding: 50px;
+  margin-top: 30px;
   background-color: white;
   border-radius: 20px;
   text-align: center;
