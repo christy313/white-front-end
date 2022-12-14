@@ -19,13 +19,14 @@ import {
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+  const [error, setError] = useState(false);
   const dispatch = useDispatch();
-  const { error, currentUser } = useSelector((state) => state.user);
+  const { currentUser } = useSelector((state) => state.user);
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
+    if (!username || !password) return setError(true);
     loginUser(dispatch, { username, password });
     if (currentUser) navigate("/");
   };

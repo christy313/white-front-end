@@ -19,13 +19,15 @@ const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
 
   const dispatch = useDispatch();
-  const { error, currentUser } = useSelector((state) => state.user);
+  const { currentUser } = useSelector((state) => state.user);
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
+    if (!username || !password || !email) return setError(true);
     RegisterUser(dispatch, { username, email, password });
     if (currentUser) navigate("/");
   };
