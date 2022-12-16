@@ -8,9 +8,6 @@ Discover trending and fancy living accessories in it's all white online shop!
 
 ![](./public/white.webp)
 
-
-## Contents
-
 ## Stacks
 
 - React 
