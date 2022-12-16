@@ -12,7 +12,7 @@ Discover trending and fancy living accessories in it's all white online shop!
 
 ## Stacks
 
-Front-end: React / Redux Toolkit / React Router / styled-component
+Front-end: React / Redux Toolkit / React Router / styled-component \
 Back-end: Node / Express / MongoDB / JWT / Stripe
 
 ## Installation
