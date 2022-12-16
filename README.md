@@ -1,65 +1,119 @@
-# Getting Started with Create React App
+# It's all white
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Summary
 
-## Available Scripts
+Discover trending and fancy living accessories in it's all white online shop!
 
-In the project directory, you can run:
+[Demo](https://allwhite.netlify.app/)
 
-### `npm start`
+![](./public/white.webp)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Contents
 
-### `npm run build`
+## Stacks
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- React 
+- Redux Toolkit
+- React Router
+- Node 
+- Express 
+- MongoDB 
+- JWT
+- RESTful API 
+- Stripe 
+- styled-component
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Clone the project
 
-### `npm run eject`
+```
+$ git clone git@github.com:christy313/white-front-end.git
+$ cd white-front-end
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Install packages
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`$ npm install`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Start the server
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+`$ npm start`
 
-## Learn More
+## Future Improvement
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- order list for each user
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## File structure
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+.
+├── README.md
+└── src
+    ├── App.jsx
+    ├── App.test.js
+    ├── components
+    │   ├── Categories
+    │   │   ├── Categories.styles.jsx
+    │   │   └── index.jsx
+    │   ├── CategoryItem
+    │   │   ├── CategoryItem.styles.jsx
+    │   │   └── index.jsx
+    │   ├── Footer
+    │   │   ├── Footer.styles.jsx
+    │   │   └── index.jsx
+    │   ├── Navbar
+    │   │   ├── Navbar.styles.jsx
+    │   │   └── index.jsx
+    │   ├── Newsletter
+    │   │   ├── Newsletter.styles.jsx
+    │   │   └── index.jsx
+    │   ├── Notice
+    │   │   ├── Notice.styles.jsx
+    │   │   └── index.jsx
+    │   ├── Product
+    │   │   ├── Product.styles.jsx
+    │   │   └── index.jsx
+    │   ├── Products
+    │   │   ├── Products.styles.jsx
+    │   │   └── index.jsx
+    │   └── Slider
+    │       ├── Slider.styles.jsx
+    │       └── index.jsx
+    ├── data
+    │   ├── data.js
+    │   └── products.json
+    ├── index.css
+    ├── index.js
+    ├── logo.svg
+    ├── pages
+    │   ├── Cancel
+    │   │   ├── Cancel.styles.jsx
+    │   │   └── index.jsx
+    │   ├── Cart
+    │   │   ├── Cart.styles.jsx
+    │   │   └── index.jsx
+    │   ├── Home.jsx
+    │   ├── Login
+    │   │   ├── Login.styles.jsx
+    │   │   └── index.jsx
+    │   ├── ProductsList
+    │   │   ├── ProductsList.styles.jsx
+    │   │   └── index.jsx
+    │   ├── Register
+    │   │   ├── Register.styles.jsx
+    │   │   └── index.jsx
+    │   ├── SingleProduct
+    │   │   ├── SingleProduct.styles.jsx
+    │   │   └── index.jsx
+    │   └── Success
+    │       ├── Success.styles.jsx
+    │       └── index.jsx
+    ├── redux
+    │   ├── apiCalls.js
+    │   ├── cartRedux.js
+    │   ├── store.js
+    │   └── userRedux.js
+    └── responsive.js
+```
