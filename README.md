@@ -4,22 +4,16 @@
 
 Discover trending and fancy living accessories in it's all white online shop!
 
-[Demo](https://allwhite.netlify.app/)
+[Live Demo](https://allwhite.netlify.app/)
 
 ![](./public/white.webp)
 
+[Back end codes](https://github.com/christy313/white-back-end)
+
 ## Stacks
 
-- React 
-- Redux Toolkit
-- React Router
-- Node 
-- Express 
-- MongoDB 
-- JWT
-- RESTful API 
-- Stripe 
-- styled-component
+Front-end: React / Redux Toolkit / React Router / styled-component
+Back-end: Node / Express / MongoDB / JWT / Stripe
 
 ## Installation
 
